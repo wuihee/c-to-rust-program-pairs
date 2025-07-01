@@ -1,3 +1,5 @@
+# C-Rust Program Pairs
+
 This repository contains pairs of programs.
 Each pair consists of a C program and a Rust program.
 
@@ -6,7 +8,8 @@ Each program is provided in its full source code tree.  For example, this is equ
 There is a script (name TBD) that re-creates or updates the contents of this repository, by downloading from the Internet and optionally doing some postprocessing.
 
 There is a metadata file (name and organization TBD) that includes:
- * a URL for the C program
- * a URL for the Rust program
- * a URL that describes the relationship between the programs.  This might be the README for the Rust program, or a blog post, etc.
- * whether the Rust program is a direct translation, a rewrite, or a program inspired by the C program that might have different features.  If a direct translation or a rewrite, then the tests of each version ought to pass on the other implementation -- if they do not, that is a bug rather than a design choice.
+
+- a URL for the C program
+- a URL for the Rust program
+- a URL that describes the relationship between the programs.  This might be the README for the Rust program, or a blog post, etc.
+- whether the Rust program is a direct translation, a rewrite, or a program inspired by the C program that might have different features.  If a direct translation or a rewrite, then the tests of each version ought to pass on the other implementation -- if they do not, that is a bug rather than a design choice.
