@@ -1,0 +1,28 @@
+version: "1.0"
+description: "C to Rust Translation Corpus"
+last_updated: "07-01-2025"
+
+programs:
+  - id: "coreutils-cat"
+    name: "cat"
+    category: "system-utilities"
+
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/cat.c"
+      commit: "v9.4"
+
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/cat/src/cat.rs"
+      commit: "0.0.23"
+    
+    relationship:
+      type: "drop-in-replacement"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: true
+    
+    tests:
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+      c_tests_pass_on_rust: true
+      rust_tests_pass_on_c: false
