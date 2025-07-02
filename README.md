@@ -13,3 +13,9 @@ There is a metadata file (name and organization TBD) that includes:
 - a URL for the Rust program
 - a URL that describes the relationship between the programs.  This might be the README for the Rust program, or a blog post, etc.
 - whether the Rust program is a direct translation, a rewrite, or a program inspired by the C program that might have different features.  If a direct translation or a rewrite, then the tests of each version ought to pass on the other implementation -- if they do not, that is a bug rather than a design choice.
+
+## TODO
+
+- [util-linux](https://github.com/uutils/util-linux)
+- [procps](https://github.com/uutils/procps)
+- [diffutils](https://github.com/uutils/diffutils)
