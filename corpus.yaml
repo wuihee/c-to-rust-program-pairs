@@ -1,28 +1,1858 @@
 version: "1.0"
 description: "C to Rust Translation Corpus"
-last_updated: "07-01-2025"
 
 programs:
+  - id: "coreutils-arch"
+    name: "arch"
+    description: "Display machine architecture"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/arch.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/arch/src/arch.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-base32"
+    name: "base32"
+    description: "Base32 encode/decode data"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/base32.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/base32/src/base32.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-base64"
+    name: "base64"
+    description: "Base64 encode/decode data"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/base64.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/base64/src/base64.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-basename"
+    name: "basename"
+    description: "Strip directory and suffix from filenames"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/basename.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/basename/src/basename.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-basenc"
+    name: "basenc"
+    description: "Encode/decode data in various bases"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/basenc.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/basenc/src/basenc.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
   - id: "coreutils-cat"
     name: "cat"
-    category: "system-utilities"
-
+    description: "Concatenate files and print on the standard output"
     c_program:
       url: "https://github.com/coreutils/coreutils"
       path: "src/cat.c"
-      commit: "v9.4"
-
+      commit: "v9.6"
     rust_program:
       url: "https://github.com/uutils/coreutils"
       path: "src/uu/cat/src/cat.rs"
-      commit: "0.0.23"
-    
+      commit: "0.1.0"
     relationship:
-      type: "drop-in-replacement"
+      type: "rewrite"
       description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
-      test_compatibility: true
-    
-    tests:
+      test_compatibility: false
       shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
-      c_tests_pass_on_rust: true
-      rust_tests_pass_on_c: false
+
+  - id: "coreutils-chcon"
+    name: "chcon"
+    description: "Change file security context"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/chcon.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/chcon/src/chcon.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-chgrp"
+    name: "chgrp"
+    description: "Change group ownership of files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/chgrp.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/chgrp/src/chgrp.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-chmod"
+    name: "chmod"
+    description: "Change file mode bits"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/chmod.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/chmod/src/chmod.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-chown"
+    name: "chown"
+    description: "Change file owner and group"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/chown.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/chown/src/chown.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-chroot"
+    name: "chroot"
+    description: "Run command or interactive shell with special root directory"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/chroot.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/chroot/src/chroot.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-cksum"
+    name: "cksum"
+    description: "Checksum and count the bytes in a file"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/cksum.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/cksum/src/cksum.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-comm"
+    name: "comm"
+    description: "Compare two sorted files line by line"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/comm.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/comm/src/comm.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-cp"
+    name: "cp"
+    description: "Copy files or directories"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/cp.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/cp/src/cp.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-csplit"
+    name: "csplit"
+    description: "Split a file into sections determined by context lines"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/csplit.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/csplit/src/csplit.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-cut"
+    name: "cut"
+    description: "Remove sections from each line of files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/cut.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/cut/src/cut.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-date"
+    name: "date"
+    description: "Print or set the system date"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/date.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/date/src/date.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-dd"
+    name: "dd"
+    description: "Convert and copy a file"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/dd.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/dd/src/dd.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-df"
+    name: "df"
+    description: "Display filesystem disk space usage"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/df.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/df/src/df.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-dir"
+    name: "dir"
+    description: "List directory contents"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/ls.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/dir/src/dir.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-dircolors"
+    name: "dircolors"
+    description: "Color setup for ls"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/dircolors.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/dircolors/src/dircolors.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-dirname"
+    name: "dirname"
+    description: "Strip last component from file name"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/dirname.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/dirname/src/dirname.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-du"
+    name: "du"
+    description: "Estimate file space usage"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/du.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/du/src/du.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-echo"
+    name: "echo"
+    description: "Display a line of text"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/echo.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/echo/src/echo.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-env"
+    name: "env"
+    description: "Run a program in a modified environment"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/env.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/env/src/env.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-expand"
+    name: "expand"
+    description: "Convert tabs to spaces"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/expand.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/expand/src/expand.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-expr"
+    name: "expr"
+    description: "Evaluate expressions"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/expr.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/expr/src/expr.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-factor"
+    name: "factor"
+    description: "Factor numbers"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/factor.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/factor/src/factor.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-false"
+    name: "false"
+    description: "Do nothing, unsuccessfully"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/false.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/false/src/false.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-fmt"
+    name: "fmt"
+    description: "Simple optimal text formatter"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/fmt.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/fmt/src/fmt.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-fold"
+    name: "fold"
+    description: "Wrap each input line to fit in specified width"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/fold.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/fold/src/fold.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-groups"
+    name: "groups"
+    description: "Print the groups a user is in"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/groups.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/groups/src/groups.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-hashsum"
+    name: "hashsum"
+    description: "Compute and check hashes"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/md5sum.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/hashsum/src/hashsum.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-head"
+    name: "head"
+    description: "Output the first part of files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/head.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/head/src/head.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-hostid"
+    name: "hostid"
+    description: "Print the numeric identifier for the current host"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/hostid.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/hostid/src/hostid.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-hostname"
+    name: "hostname"
+    description: "Print or set the system hostname"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/hostname.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/hostname/src/hostname.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-id"
+    name: "id"
+    description: "Print real and effective user and group IDs"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/id.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/id/src/id.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-install"
+    name: "install"
+    description: "Copy files and set attributes"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/install.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/install/src/install.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-join"
+    name: "join"
+    description: "Join lines of two files on a common field"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/join.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/join/src/join.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-kill"
+    name: "kill"
+    description: "Send signals to processes"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/kill.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/kill/src/kill.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-link"
+    name: "link"
+    description: "Create a link to a file"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/link.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/link/src/link.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-ln"
+    name: "ln"
+    description: "Make links between files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/ln.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/ln/src/ln.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-logname"
+    name: "logname"
+    description: "Print user's login name"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/logname.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/logname/src/logname.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-ls"
+    name: "ls"
+    description: "List directory contents"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/ls.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/ls/src/ls.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-md5sum"
+    name: "md5sum"
+    description: "Compute and check MD5 message digest"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/md5sum.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/hashsum/src/hashsum.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-mkdir"
+    name: "mkdir"
+    description: "Make directories"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/mkdir.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/mkdir/src/mkdir.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-mkfifo"
+    name: "mkfifo"
+    description: "Make FIFOs (named pipes)"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/mkfifo.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/mkfifo/src/mkfifo.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-mknod"
+    name: "mknod"
+    description: "Make block or character special files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/mknod.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/mknod/src/mknod.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-mktemp"
+    name: "mktemp"
+    description: "Create a temporary file or directory"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/mktemp.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/mktemp/src/mktemp.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-more"
+    name: "more"
+    description: "Display output one screen at a time"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/more.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/more/src/more.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-mv"
+    name: "mv"
+    description: "Move (rename) files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/mv.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/mv/src/mv.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-nice"
+    name: "nice"
+    description: "Run a program with modified scheduling priority"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/nice.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/nice/src/nice.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-nl"
+    name: "nl"
+    description: "Number lines of files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/nl.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/nl/src/nl.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-nohup"
+    name: "nohup"
+    description: "Run a command immune to hangups"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/nohup.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/nohup/src/nohup.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-nproc"
+    name: "nproc"
+    description: "Print the number of processing units available"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/nproc.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/nproc/src/nproc.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-numfmt"
+    name: "numfmt"
+    description: "Convert numbers from/to human-readable strings"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/numfmt.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/numfmt/src/numfmt.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-od"
+    name: "od"
+    description: "Dump files in octal and other formats"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/od.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/od/src/od.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-paste"
+    name: "paste"
+    description: "Merge lines of files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/paste.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/paste/src/paste.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-pathchk"
+    name: "pathchk"
+    description: "Check whether file names are valid or portable"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/pathchk.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/pathchk/src/pathchk.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-pinky"
+    name: "pinky"
+    description: "Lightweight finger"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/pinky.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/pinky/src/pinky.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-pr"
+    name: "pr"
+    description: "Convert text files for printing"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/pr.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/pr/src/pr.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-printenv"
+    name: "printenv"
+    description: "Print all or part of environment"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/printenv.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/printenv/src/printenv.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-printf"
+    name: "printf"
+    description: "Format and print data"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/printf.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/printf/src/printf.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-ptx"
+    name: "ptx"
+    description: "Produce a permuted index of file contents"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/ptx.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/ptx/src/ptx.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-pwd"
+    name: "pwd"
+    description: "Print name of current/working directory"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/pwd.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/pwd/src/pwd.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-readlink"
+    name: "readlink"
+    description: "Print resolved symbolic links or canonical file names"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/readlink.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/readlink/src/readlink.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-realpath"
+    name: "realpath"
+    description: "Print the resolved path"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/realpath.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/realpath/src/realpath.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-rm"
+    name: "rm"
+    description: "Remove files or directories"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/rm.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/rm/src/rm.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-rmdir"
+    name: "rmdir"
+    description: "Remove empty directories"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/rmdir.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/rmdir/src/rmdir.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-runcon"
+    name: "runcon"
+    description: "Run command with specified security context"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/runcon.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/runcon/src/runcon.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-seq"
+    name: "seq"
+    description: "Print a sequence of numbers"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/seq.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/seq/src/seq.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-sha1sum"
+    name: "sha1sum"
+    description: "Compute and check SHA1 message digest"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/sha1sum.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/hashsum/src/hashsum.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-sha224sum"
+    name: "sha224sum"
+    description: "Compute and check SHA224 message digest"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/sha224sum.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/hashsum/src/hashsum.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-sha256sum"
+    name: "sha256sum"
+    description: "Compute and check SHA256 message digest"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/sha256sum.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/hashsum/src/hashsum.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-sha384sum"
+    name: "sha384sum"
+    description: "Compute and check SHA384 message digest"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/sha384sum.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/hashsum/src/hashsum.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-sha512sum"
+    name: "sha512sum"
+    description: "Compute and check SHA512 message digest"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/sha512sum.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/hashsum/src/hashsum.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-shred"
+    name: "shred"
+    description: "Overwrite a file to hide its contents, and optionally delete it"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/shred.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/shred/src/shred.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-shuf"
+    name: "shuf"
+    description: "Generate random permutations"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/shuf.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/shuf/src/shuf.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-sleep"
+    name: "sleep"
+    description: "Delay for a specified amount of time"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/sleep.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/sleep/src/sleep.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-sort"
+    name: "sort"
+    description: "Sort lines of text files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/sort.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/sort/src/sort.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-split"
+    name: "split"
+    description: "Split a file into pieces"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/split.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/split/src/split.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-stat"
+    name: "stat"
+    description: "Display file or file system status"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/stat.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/stat/src/stat.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-stdbuf"
+    name: "stdbuf"
+    description: "Run command with modified buffering for its standard streams"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/stdbuf.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/stdbuf/src/stdbuf.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-stty"
+    name: "stty"
+    description: "Change and print terminal line settings"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/stty.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/stty/src/stty.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-sum"
+    name: "sum"
+    description: "Checksum and count the blocks in a file"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/sum.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/sum/src/sum.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-sync"
+    name: "sync"
+    description: "Synchronize cached writes to persistent storage"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/sync.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/sync/src/sync.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-tac"
+    name: "tac"
+    description: "Concatenate and print files in reverse"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/tac.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/tac/src/tac.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-tail"
+    name: "tail"
+    description: "Output the last part of files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/tail.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/tail/src/tail.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-tee"
+    name: "tee"
+    description: "Read from standard input and write to standard output and files"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/tee.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/tee/src/tee.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-test"
+    name: "test"
+    description: "Check file types and compare values"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/test.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/test/src/test.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-timeout"
+    name: "timeout"
+    description: "Run a command with a time limit"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/timeout.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/timeout/src/timeout.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-touch"
+    name: "touch"
+    description: "Change file timestamps"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/touch.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/touch/src/touch.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-tr"
+    name: "tr"
+    description: "Translate or delete characters"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/tr.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/tr/src/tr.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-true"
+    name: "true"
+    description: "Do nothing, successfully"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/true.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/true/src/true.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-truncate"
+    name: "truncate"
+    description: "Shrink or extend the size of a file to the specified size"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/truncate.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/truncate/src/truncate.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-tsort"
+    name: "tsort"
+    description: "Perform topological sort"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/tsort.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/tsort/src/tsort.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-tty"
+    name: "tty"
+    description: "Print the file name of the terminal connected to standard input"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/tty.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/tty/src/tty.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-uname"
+    name: "uname"
+    description: "Print system information"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/uname.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/uname/src/uname.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-unexpand"
+    name: "unexpand"
+    description: "Convert spaces to tabs"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/unexpand.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/unexpand/src/unexpand.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-uniq"
+    name: "uniq"
+    description: "Report or omit repeated lines"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/uniq.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/uniq/src/uniq.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-unlink"
+    name: "unlink"
+    description: "Call the unlink function to remove the specified file"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/unlink.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/unlink/src/unlink.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-uptime"
+    name: "uptime"
+    description: "Tell how long the system has been running"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/uptime.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/uptime/src/uptime.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-users"
+    name: "users"
+    description: "Print the user names of users currently logged in"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/users.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/users/src/users.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-vdir"
+    name: "vdir"
+    description: "List directory contents in long format by default"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/ls.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/vdir/src/vdir.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-wc"
+    name: "wc"
+    description: "Print newline, word, and byte counts for each file"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/wc.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/wc/src/wc.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-who"
+    name: "who"
+    description: "Show who is logged on"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/who.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/who/src/who.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-whoami"
+    name: "whoami"
+    description: "Print effective userid"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/whoami.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/whoami/src/whoami.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+  - id: "coreutils-yes"
+    name: "yes"
+    description: "Output a string repeatedly until killed"
+    c_program:
+      url: "https://github.com/coreutils/coreutils"
+      path: "src/yes.c"
+      commit: "v9.6"
+    rust_program:
+      url: "https://github.com/uutils/coreutils"
+      path: "src/uu/yes/src/yes.rs"
+      commit: "0.1.0"
+    relationship:
+      type: "rewrite"
+      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
+      test_compatibility: false
+      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
+
+# Project metadata
+project_info:
+  name: "GNU Coreutils to Rust uutils Translation"
+  description: "Complete rewrite of GNU Coreutils in Rust for cross-platform compatibility and memory safety"
+  gnu_coreutils_version: "9.6"
+  uutils_version: "0.1.0"
+  total_utilities: 103
+  test_suite_status:
+    passing_tests: 507
+    total_tests: 624
+    compatibility_percentage: 81.3
+  performance_notes: "Mixed performance compared to GNU - some utilities faster, others slower"
+  license_difference: "GNU GPL vs MIT"
+
+relationship_types:
+  direct_translation: Functionally identical programs with same API and behavior
+  rewrite: Same core functionality but may have different APIs or features
+  inspired_by: Program inspired by the original but with significant differences
