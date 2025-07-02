@@ -1,7 +1,4 @@
-version: "1.0"
-description: "C to Rust Translation Corpus"
-
-programs:
+pairs:
   - id: "coreutils-arch"
     name: "arch"
     description: "Display machine architecture"
@@ -1837,20 +1834,6 @@ programs:
       description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
       test_compatibility: false
       shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
-
-# Project metadata
-project_info:
-  name: "GNU Coreutils to Rust uutils Translation"
-  description: "Complete rewrite of GNU Coreutils in Rust for cross-platform compatibility and memory safety"
-  gnu_coreutils_version: "9.6"
-  uutils_version: "0.1.0"
-  total_utilities: 103
-  test_suite_status:
-    passing_tests: 507
-    total_tests: 624
-    compatibility_percentage: 81.3
-  performance_notes: "Mixed performance compared to GNU - some utilities faster, others slower"
-  license_difference: "GNU GPL vs MIT"
 
 relationship_types:
   direct_translation: Functionally identical programs with same API and behavior
