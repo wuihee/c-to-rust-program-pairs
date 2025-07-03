@@ -19,3 +19,13 @@ There is a metadata file (name and organization TBD) that includes:
 - [util-linux](https://github.com/uutils/util-linux)
 - [procps](https://github.com/uutils/procps)
 - [diffutils](https://github.com/uutils/diffutils)
+
+## CLI Specification
+
+1. Create a folder with the name of the program-pair.
+2. Clone the C repository into a temporary directory, but check if this has already been done.
+3. Navigate to the path of the C program.
+4. Move the directory/file into our newly created folder.
+5. Clone the C repository into a temporary directory, but check if this has already been done.
+6. Navigate to the path of the Rust program.
+7. Move the directory/file into our newly created folder.
