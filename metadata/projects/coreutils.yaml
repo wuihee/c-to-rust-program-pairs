@@ -747,23 +747,6 @@ pairs:
       test_compatibility: false
       shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
 
-  - id: "coreutils-md5sum"
-    name: "md5sum"
-    description: "Compute and check MD5 message digest"
-    c_program:
-      url: "https://github.com/coreutils/coreutils"
-      path: "src/md5sum.c"
-      commit: "v9.6"
-    rust_program:
-      url: "https://github.com/uutils/coreutils"
-      path: "src/uu/hashsum/src/hashsum.rs"
-      commit: "0.1.0"
-    relationship:
-      type: "rewrite"
-      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
-      test_compatibility: false
-      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
-
   - id: "coreutils-mkdir"
     name: "mkdir"
     description: "Make directories"
@@ -1199,91 +1182,6 @@ pairs:
     rust_program:
       url: "https://github.com/uutils/coreutils"
       path: "src/uu/seq/src/seq.rs"
-      commit: "0.1.0"
-    relationship:
-      type: "rewrite"
-      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
-      test_compatibility: false
-      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
-
-  - id: "coreutils-sha1sum"
-    name: "sha1sum"
-    description: "Compute and check SHA1 message digest"
-    c_program:
-      url: "https://github.com/coreutils/coreutils"
-      path: "src/sha1sum.c"
-      commit: "v9.6"
-    rust_program:
-      url: "https://github.com/uutils/coreutils"
-      path: "src/uu/hashsum/src/hashsum.rs"
-      commit: "0.1.0"
-    relationship:
-      type: "rewrite"
-      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
-      test_compatibility: false
-      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
-
-  - id: "coreutils-sha224sum"
-    name: "sha224sum"
-    description: "Compute and check SHA224 message digest"
-    c_program:
-      url: "https://github.com/coreutils/coreutils"
-      path: "src/sha224sum.c"
-      commit: "v9.6"
-    rust_program:
-      url: "https://github.com/uutils/coreutils"
-      path: "src/uu/hashsum/src/hashsum.rs"
-      commit: "0.1.0"
-    relationship:
-      type: "rewrite"
-      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
-      test_compatibility: false
-      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
-
-  - id: "coreutils-sha256sum"
-    name: "sha256sum"
-    description: "Compute and check SHA256 message digest"
-    c_program:
-      url: "https://github.com/coreutils/coreutils"
-      path: "src/sha256sum.c"
-      commit: "v9.6"
-    rust_program:
-      url: "https://github.com/uutils/coreutils"
-      path: "src/uu/hashsum/src/hashsum.rs"
-      commit: "0.1.0"
-    relationship:
-      type: "rewrite"
-      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
-      test_compatibility: false
-      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
-
-  - id: "coreutils-sha384sum"
-    name: "sha384sum"
-    description: "Compute and check SHA384 message digest"
-    c_program:
-      url: "https://github.com/coreutils/coreutils"
-      path: "src/sha384sum.c"
-      commit: "v9.6"
-    rust_program:
-      url: "https://github.com/uutils/coreutils"
-      path: "src/uu/hashsum/src/hashsum.rs"
-      commit: "0.1.0"
-    relationship:
-      type: "rewrite"
-      description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
-      test_compatibility: false
-      shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
-
-  - id: "coreutils-sha512sum"
-    name: "sha512sum"
-    description: "Compute and check SHA512 message digest"
-    c_program:
-      url: "https://github.com/coreutils/coreutils"
-      path: "src/sha512sum.c"
-      commit: "v9.6"
-    rust_program:
-      url: "https://github.com/uutils/coreutils"
-      path: "src/uu/hashsum/src/hashsum.rs"
       commit: "0.1.0"
     relationship:
       type: "rewrite"
@@ -1834,8 +1732,3 @@ pairs:
       description_url: "https://github.com/uutils/coreutils/blob/main/README.md"
       test_compatibility: false
       shared_test_suite: "https://github.com/coreutils/coreutils/tree/master/tests"
-
-relationship_types:
-  direct_translation: Functionally identical programs with same API and behavior
-  rewrite: Same core functionality but may have different APIs or features
-  inspired_by: Program inspired by the original but with significant differences
