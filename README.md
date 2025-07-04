@@ -24,8 +24,6 @@ There is a metadata file (name and organization TBD) that includes:
 
 1. Create a folder with the name of the program-pair.
 2. Clone the C repository into a temporary directory, but check if this has already been done.
-3. Navigate to the path of the C program.
-4. Move the directory/file into our newly created folder.
-5. Clone the C repository into a temporary directory, but check if this has already been done.
-6. Navigate to the path of the Rust program.
-7. Move the directory/file into our newly created folder.
+3. Copy the C program from the cloned repository into our folder.
+4. Clone the Rust repository into a temporary directory, but check if this has already been done.
+5. Copy the Rust program from the cloned repository into our folder.
