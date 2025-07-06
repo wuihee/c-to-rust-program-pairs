@@ -22,18 +22,3 @@ pairs:
       path: src/cmp.c
     rust_program:
       path: src/cmp.rs
-
-  - name: diff3
-    description: Show differences between three files.
-    c_program:
-      path: src/diff3.c
-    rust_program:
-      path: 
-
-  - name: sdiff
-    description: Merge two files interactively.
-    c_program:
-      path: src/sdiff.c
-    rust_program:
-      path: 
-
