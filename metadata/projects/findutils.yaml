@@ -9,32 +9,28 @@ project:
     project_url: https://github.com/uutils/findutils
 
 pairs:
-  - id: "findutils-find"
-    name: "find"
+  - name: "find"
     description: "Search for files and directories"
     c_program:
       path: "find/find.c"
     rust_program:
       path: "src/uu/find/src/find.rs"
 
-  - id: "findutils-xargs"
-    name: "xargs"
+  - name: "xargs"
     description: "Build and execute command lines from standard input"
     c_program:
       path: "xargs/xargs.c"
     rust_program:
       path: "src/uu/xargs/src/xargs.rs"
 
-  - id: "findutils-locate"
-    name: "locate"
+  - name: "locate"
     description: "Find files by name using a database"
     c_program:
       path: "locate/locate.c"
     rust_program:
       path: "src/uu/locate/src/locate.rs"
 
-  - id: "findutils-updatedb"
-    name: "updatedb"
+  - name: "updatedb"
     description: "Update the locate database"
     c_program:
       path: "locate/updatedb.sh"
