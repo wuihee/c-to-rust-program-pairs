@@ -1,0 +1,122 @@
+project:
+  name: procps
+  description: Provides command line and full screen utilities for browsing procfs.
+  description_url: https://github.com/uutils/procps/blob/main/README.md
+  relationship_type: rewrite
+  c_project:
+    project_url:
+  rust_project:
+    project_url: https://github.com/uutils/procps
+
+pairs:
+  - name: free
+    description: Report the amount of free and used memory in the system.
+    c_program:
+      path: src/free.c
+    rust_program:
+      path: src/uu/free/
+
+  - name: pgrep
+    description: List processes based on name or other attributes.
+    c_program:
+      path: src/pgrep.c
+    rust_program:
+      path: src/uu/pgrep/
+
+  - name: pidof
+    description: Find the process ID of a running program.
+    c_program:
+      path: src/pidof.c
+    rust_program:
+      path: src/uu/pidof/
+
+  - name: pidwait
+    description: Wait for a specific process to terminate.
+    c_program:
+      path: src/pidwait.c
+    rust_program:
+      path: src/uu/pidwait/
+
+  - name: pkill
+    description: Kill processes based on name and other attributes.
+    c_program:
+      path: src/pkill.c
+    rust_program:
+      path: src/uu/pkill/
+
+  - name: pmap
+    description: Display the memory map of a process.
+    c_program:
+      path: src/pmap.c
+    rust_program:
+      path: src/uu/pmap/
+
+  - name: ps
+    description: Display information about active processes.
+    c_program:
+      path: src/ps/
+    rust_program:
+      path: src/uu/ps/
+
+  - name: pwdx
+    description: Show the current working directory of a process.
+    c_program:
+      path: src/pwdx.c
+    rust_program:
+      path: src/uu/pwdx/
+
+  - name: slabtop
+    description: Display detailed kernel slab cache information in real time.
+    c_program:
+      path: src/slabtop.c
+    rust_program:
+      path: src/uu/slabtop/
+
+  - name: snice
+    description: Change the scheduling priority of a running process.
+    c_program:
+      path: src/snice.c
+    rust_program:
+      path: src/uu/snice/
+
+  - name: sysctl
+    description: Read or write kernel parameters at run-time.
+    c_program:
+      path: src/sysctl.c
+    rust_program:
+      path: src/uu/sysctl/
+
+  - name: tload
+    description: Print a graphical representation of system load average to the terminal.
+    c_program:
+      path: src/tload.c
+    rust_program:
+      path: src/uu/tload/
+
+  - name: top
+    description: Display real-time information about system processes.
+    c_program:
+      path: src/top/
+    rust_program:
+      path: src/uu/top/
+
+  - name: vmstat
+    description: Report information about processes, memory, paging, block IO, traps, and CPU activity.
+    c_program:
+      path: src/vmstat.c
+    rust_program:
+      path: src/uu/vmstat/
+
+  - name: w
+    description: Show who is logged on and what they are doing.
+    c_program:
+      path: src/w.c
+    rust_program:
+      path: src/uu/w/
+
+  - name: watch
+    description: Execute a program periodically, showing output fullscreen.
+    c_program:
+      path: src/watch.c
+    rust_program:
+      path: src/uu/watch/
