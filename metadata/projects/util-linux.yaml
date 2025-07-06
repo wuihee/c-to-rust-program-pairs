@@ -5,7 +5,7 @@ project:
   relationship_type: rewrite
   c_project:
     project_url: https://github.com/util-linux/util-linux/tree/master
-  rust_project_url:
+  rust_project:
     project_url: https://github.com/uutils/util-linux/tree/main
 
 pairs:

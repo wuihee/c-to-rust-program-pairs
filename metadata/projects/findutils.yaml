@@ -5,7 +5,7 @@ project:
   relationship_type: rewrite
   c_project:
     project_url: https://ftp.gnu.org/gnu/findutils/
-  rust_project_url:
+  rust_project:
     project_url: https://github.com/uutils/findutils
 
 pairs:

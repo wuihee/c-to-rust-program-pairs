@@ -5,7 +5,7 @@ project:
   relationship_type: rewrite
   c_project:
     project_url: https://github.com/coreutils/coreutils
-  rust_project_url:
+  rust_project:
     project_url: https://github.com/uutils/coreutils/tree/main
 
 pairs:
