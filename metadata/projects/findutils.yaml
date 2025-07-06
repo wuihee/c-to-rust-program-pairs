@@ -1,68 +1,42 @@
+project:
+  name: findutils
+  description: Rust implementation of findutils tools.
+  description_url: https://github.com/uutils/findutils/blob/main/README.md
+  relationship_type: rewrite
+  c_project:
+    project_url: https://ftp.gnu.org/gnu/findutils/
+  rust_project_url:
+    project_url: https://github.com/uutils/findutils
+
 pairs:
   - id: "findutils-find"
     name: "find"
     description: "Search for files and directories"
     c_program:
-      url: "https://git.savannah.gnu.org/git/findutils.git"
       path: "find/find.c"
-      commit: "v4.9.0"
     rust_program:
-      url: "https://github.com/uutils/findutils"
       path: "src/uu/find/src/find.rs"
-      commit: "0.4.0"
-    relationship:
-      type: "rewrite"
-      description_url: "https://github.com/uutils/findutils/blob/main/README.md"
-      test_compatibility: false
-      shared_test_suite: "https://git.savannah.gnu.org/cgit/findutils.git/tree/tests"
 
   - id: "findutils-xargs"
     name: "xargs"
     description: "Build and execute command lines from standard input"
     c_program:
-      url: "https://git.savannah.gnu.org/git/findutils.git"
       path: "xargs/xargs.c"
-      commit: "v4.9.0"
     rust_program:
-      url: "https://github.com/uutils/findutils"
       path: "src/uu/xargs/src/xargs.rs"
-      commit: "0.4.0"
-    relationship:
-      type: "rewrite"
-      description_url: "https://github.com/uutils/findutils/blob/main/README.md"
-      test_compatibility: false
-      shared_test_suite: "https://git.savannah.gnu.org/cgit/findutils.git/tree/tests"
 
   - id: "findutils-locate"
     name: "locate"
     description: "Find files by name using a database"
     c_program:
-      url: "https://git.savannah.gnu.org/git/findutils.git"
       path: "locate/locate.c"
-      commit: "v4.9.0"
     rust_program:
-      url: "https://github.com/uutils/findutils"
       path: "src/uu/locate/src/locate.rs"
-      commit: "0.4.0"
-    relationship:
-      type: "rewrite"
-      description_url: "https://github.com/uutils/findutils/blob/main/README.md"
-      test_compatibility: false
-      shared_test_suite: "https://git.savannah.gnu.org/cgit/findutils.git/tree/tests"
 
   - id: "findutils-updatedb"
     name: "updatedb"
     description: "Update the locate database"
     c_program:
-      url: "https://git.savannah.gnu.org/git/findutils.git"
       path: "locate/updatedb.sh"
-      commit: "v4.9.0"
     rust_program:
-      url: "https://github.com/uutils/findutils"
       path: "src/uu/updatedb/src/updatedb.rs"
-      commit: "0.4.0"
-    relationship:
-      type: "rewrite"
-      description_url: "https://github.com/uutils/findutils/blob/main/README.md"
-      test_compatibility: false
-      shared_test_suite: "https://git.savannah.gnu.org/cgit/findutils.git/tree/tests"
