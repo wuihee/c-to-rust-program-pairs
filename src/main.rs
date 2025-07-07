@@ -3,33 +3,36 @@ use std::fs;
 
 #[derive(Debug, Deserialize, Serialize)]
 struct MetadataFile {
+    project: ProjectMetadata,
     pairs: Vec<ProgramPair>,
 }
 
 #[derive(Debug, Deserialize, Serialize)]
+struct ProjectMetadata {
+    name: String,
+    description: String,
+    description_url: String,
+    relationship_type: String,
+    c_project: Project,
+    rust_project: Project,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+struct Project {
+    project_url: String,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
 struct ProgramPair {
-    id: String,
     name: String,
     description: String,
     c_program: Program,
     rust_program: Program,
-    relationship: Relationship,
 }
 
 #[derive(Debug, Deserialize, Serialize)]
 struct Program {
-    url: String,
     path: String,
-    commit: String,
-}
-
-#[derive(Debug, Deserialize, Serialize)]
-struct Relationship {
-    #[serde(rename = "type")]
-    relationship_type: String,
-    description_url: String,
-    test_compatibility: bool,
-    shared_test_suite: String,
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
