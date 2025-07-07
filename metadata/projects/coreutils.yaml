@@ -9,816 +9,714 @@ project:
     project_url: https://github.com/uutils/coreutils/tree/main
 
 pairs:
-  - id: "coreutils-arch"
-    name: "arch"
+  - name: "arch"
     description: "Display machine architecture"
     c_program:
       path: "src/arch.c"
     rust_program:
       path: "src/uu/arch/src/arch.rs"
 
-  - id: "coreutils-base32"
-    name: "base32"
+  - name: "base32"
     description: "Base32 encode/decode data"
     c_program:
       path: "src/base32.c"
     rust_program:
       path: "src/uu/base32/src/base32.rs"
 
-  - id: "coreutils-base64"
-    name: "base64"
+  - name: "base64"
     description: "Base64 encode/decode data"
     c_program:
       path: "src/base64.c"
     rust_program:
       path: "src/uu/base64/src/base64.rs"
 
-  - id: "coreutils-basename"
-    name: "basename"
+  - name: "basename"
     description: "Strip directory and suffix from filenames"
     c_program:
       path: "src/basename.c"
     rust_program:
       path: "src/uu/basename/src/basename.rs"
 
-  - id: "coreutils-basenc"
-    name: "basenc"
+  - name: "basenc"
     description: "Encode/decode data in various bases"
     c_program:
       path: "src/basenc.c"
     rust_program:
       path: "src/uu/basenc/src/basenc.rs"
 
-  - id: "coreutils-cat"
-    name: "cat"
+  - name: "cat"
     description: "Concatenate files and print on the standard output"
     c_program:
       path: "src/cat.c"
     rust_program:
       path: "src/uu/cat/src/cat.rs"
 
-  - id: "coreutils-chcon"
-    name: "chcon"
+  - name: "chcon"
     description: "Change file security context"
     c_program:
       path: "src/chcon.c"
     rust_program:
       path: "src/uu/chcon/src/chcon.rs"
 
-  - id: "coreutils-chgrp"
-    name: "chgrp"
+  - name: "chgrp"
     description: "Change group ownership of files"
     c_program:
       path: "src/chgrp.c"
     rust_program:
       path: "src/uu/chgrp/src/chgrp.rs"
 
-  - id: "coreutils-chmod"
-    name: "chmod"
+  - name: "chmod"
     description: "Change file mode bits"
     c_program:
       path: "src/chmod.c"
     rust_program:
       path: "src/uu/chmod/src/chmod.rs"
 
-  - id: "coreutils-chown"
-    name: "chown"
+  - name: "chown"
     description: "Change file owner and group"
     c_program:
       path: "src/chown.c"
     rust_program:
       path: "src/uu/chown/src/chown.rs"
 
-  - id: "coreutils-chroot"
-    name: "chroot"
+  - name: "chroot"
     description: "Run command or interactive shell with special root directory"
     c_program:
       path: "src/chroot.c"
     rust_program:
       path: "src/uu/chroot/src/chroot.rs"
 
-  - id: "coreutils-cksum"
-    name: "cksum"
+  - name: "cksum"
     description: "Checksum and count the bytes in a file"
     c_program:
       path: "src/cksum.c"
     rust_program:
       path: "src/uu/cksum/src/cksum.rs"
 
-  - id: "coreutils-comm"
-    name: "comm"
+  - name: "comm"
     description: "Compare two sorted files line by line"
     c_program:
       path: "src/comm.c"
     rust_program:
       path: "src/uu/comm/src/comm.rs"
 
-  - id: "coreutils-cp"
-    name: "cp"
+  - name: "cp"
     description: "Copy files or directories"
     c_program:
       path: "src/cp.c"
     rust_program:
       path: "src/uu/cp/src/cp.rs"
 
-  - id: "coreutils-csplit"
-    name: "csplit"
+  - name: "csplit"
     description: "Split a file into sections determined by context lines"
     c_program:
       path: "src/csplit.c"
     rust_program:
       path: "src/uu/csplit/src/csplit.rs"
 
-  - id: "coreutils-cut"
-    name: "cut"
+  - name: "cut"
     description: "Remove sections from each line of files"
     c_program:
       path: "src/cut.c"
     rust_program:
       path: "src/uu/cut/src/cut.rs"
 
-  - id: "coreutils-date"
-    name: "date"
+  - name: "date"
     description: "Print or set the system date"
     c_program:
       path: "src/date.c"
     rust_program:
       path: "src/uu/date/src/date.rs"
 
-  - id: "coreutils-dd"
-    name: "dd"
+  - name: "dd"
     description: "Convert and copy a file"
     c_program:
       path: "src/dd.c"
     rust_program:
       path: "src/uu/dd/src/dd.rs"
 
-  - id: "coreutils-df"
-    name: "df"
+  - name: "df"
     description: "Display filesystem disk space usage"
     c_program:
       path: "src/df.c"
     rust_program:
       path: "src/uu/df/src/df.rs"
 
-  - id: "coreutils-dir"
-    name: "dir"
+  - name: "dir"
     description: "List directory contents"
     c_program:
       path: "src/ls.c"
     rust_program:
       path: "src/uu/dir/src/dir.rs"
 
-  - id: "coreutils-dircolors"
-    name: "dircolors"
+  - name: "dircolors"
     description: "Color setup for ls"
     c_program:
       path: "src/dircolors.c"
     rust_program:
       path: "src/uu/dircolors/src/dircolors.rs"
 
-  - id: "coreutils-dirname"
-    name: "dirname"
+  - name: "dirname"
     description: "Strip last component from file name"
     c_program:
       path: "src/dirname.c"
     rust_program:
       path: "src/uu/dirname/src/dirname.rs"
 
-  - id: "coreutils-du"
-    name: "du"
+  - name: "du"
     description: "Estimate file space usage"
     c_program:
       path: "src/du.c"
     rust_program:
       path: "src/uu/du/src/du.rs"
 
-  - id: "coreutils-echo"
-    name: "echo"
+  - name: "echo"
     description: "Display a line of text"
     c_program:
       path: "src/echo.c"
     rust_program:
       path: "src/uu/echo/src/echo.rs"
 
-  - id: "coreutils-env"
-    name: "env"
+  - name: "env"
     description: "Run a program in a modified environment"
     c_program:
       path: "src/env.c"
     rust_program:
       path: "src/uu/env/src/env.rs"
 
-  - id: "coreutils-expand"
-    name: "expand"
+  - name: "expand"
     description: "Convert tabs to spaces"
     c_program:
       path: "src/expand.c"
     rust_program:
       path: "src/uu/expand/src/expand.rs"
 
-  - id: "coreutils-expr"
-    name: "expr"
+  - name: "expr"
     description: "Evaluate expressions"
     c_program:
       path: "src/expr.c"
     rust_program:
       path: "src/uu/expr/src/expr.rs"
 
-  - id: "coreutils-factor"
-    name: "factor"
+  - name: "factor"
     description: "Factor numbers"
     c_program:
       path: "src/factor.c"
     rust_program:
       path: "src/uu/factor/src/factor.rs"
 
-  - id: "coreutils-false"
-    name: "false"
+  - name: "false"
     description: "Do nothing, unsuccessfully"
     c_program:
       path: "src/false.c"
     rust_program:
       path: "src/uu/false/src/false.rs"
 
-  - id: "coreutils-fmt"
-    name: "fmt"
+  - name: "fmt"
     description: "Simple optimal text formatter"
     c_program:
       path: "src/fmt.c"
     rust_program:
       path: "src/uu/fmt/src/fmt.rs"
 
-  - id: "coreutils-fold"
-    name: "fold"
+  - name: "fold"
     description: "Wrap each input line to fit in specified width"
     c_program:
       path: "src/fold.c"
     rust_program:
       path: "src/uu/fold/src/fold.rs"
 
-  - id: "coreutils-groups"
-    name: "groups"
+  - name: "groups"
     description: "Print the groups a user is in"
     c_program:
       path: "src/groups.c"
     rust_program:
       path: "src/uu/groups/src/groups.rs"
 
-  - id: "coreutils-hashsum"
-    name: "hashsum"
+  - name: "hashsum"
     description: "Compute and check hashes"
     c_program:
       path: "src/md5sum.c"
     rust_program:
       path: "src/uu/hashsum/src/hashsum.rs"
 
-  - id: "coreutils-head"
-    name: "head"
+  - name: "head"
     description: "Output the first part of files"
     c_program:
       path: "src/head.c"
     rust_program:
       path: "src/uu/head/src/head.rs"
 
-  - id: "coreutils-hostid"
-    name: "hostid"
+  - name: "hostid"
     description: "Print the numeric identifier for the current host"
     c_program:
       path: "src/hostid.c"
     rust_program:
       path: "src/uu/hostid/src/hostid.rs"
 
-  - id: "coreutils-hostname"
-    name: "hostname"
+  - name: "hostname"
     description: "Print or set the system hostname"
     c_program:
       path: "src/hostname.c"
     rust_program:
       path: "src/uu/hostname/src/hostname.rs"
 
-  - id: "coreutils-id"
-    name: "id"
+  - name: "id"
     description: "Print real and effective user and group IDs"
     c_program:
       path: "src/id.c"
     rust_program:
       path: "src/uu/id/src/id.rs"
 
-  - id: "coreutils-install"
-    name: "install"
+  - name: "install"
     description: "Copy files and set attributes"
     c_program:
       path: "src/install.c"
     rust_program:
       path: "src/uu/install/src/install.rs"
 
-  - id: "coreutils-join"
-    name: "join"
+  - name: "join"
     description: "Join lines of two files on a common field"
     c_program:
       path: "src/join.c"
     rust_program:
       path: "src/uu/join/src/join.rs"
 
-  - id: "coreutils-kill"
-    name: "kill"
+  - name: "kill"
     description: "Send signals to processes"
     c_program:
       path: "src/kill.c"
     rust_program:
       path: "src/uu/kill/src/kill.rs"
 
-  - id: "coreutils-link"
-    name: "link"
+  - name: "link"
     description: "Create a link to a file"
     c_program:
       path: "src/link.c"
     rust_program:
       path: "src/uu/link/src/link.rs"
 
-  - id: "coreutils-ln"
-    name: "ln"
+  - name: "ln"
     description: "Make links between files"
     c_program:
       path: "src/ln.c"
     rust_program:
       path: "src/uu/ln/src/ln.rs"
 
-  - id: "coreutils-logname"
-    name: "logname"
+  - name: "logname"
     description: "Print user's login name"
     c_program:
       path: "src/logname.c"
     rust_program:
       path: "src/uu/logname/src/logname.rs"
 
-  - id: "coreutils-ls"
-    name: "ls"
+  - name: "ls"
     description: "List directory contents"
     c_program:
       path: "src/ls.c"
     rust_program:
       path: "src/uu/ls/src/ls.rs"
 
-  - id: "coreutils-mkdir"
-    name: "mkdir"
+  - name: "mkdir"
     description: "Make directories"
     c_program:
       path: "src/mkdir.c"
     rust_program:
       path: "src/uu/mkdir/src/mkdir.rs"
 
-  - id: "coreutils-mkfifo"
-    name: "mkfifo"
+  - name: "mkfifo"
     description: "Make FIFOs (named pipes)"
     c_program:
       path: "src/mkfifo.c"
     rust_program:
       path: "src/uu/mkfifo/src/mkfifo.rs"
 
-  - id: "coreutils-mknod"
-    name: "mknod"
+  - name: "mknod"
     description: "Make block or character special files"
     c_program:
       path: "src/mknod.c"
     rust_program:
       path: "src/uu/mknod/src/mknod.rs"
 
-  - id: "coreutils-mktemp"
-    name: "mktemp"
+  - name: "mktemp"
     description: "Create a temporary file or directory"
     c_program:
       path: "src/mktemp.c"
     rust_program:
       path: "src/uu/mktemp/src/mktemp.rs"
 
-  - id: "coreutils-more"
-    name: "more"
+  - name: "more"
     description: "Display output one screen at a time"
     c_program:
       path: "src/more.c"
     rust_program:
       path: "src/uu/more/src/more.rs"
 
-  - id: "coreutils-mv"
-    name: "mv"
+  - name: "mv"
     description: "Move (rename) files"
     c_program:
       path: "src/mv.c"
     rust_program:
       path: "src/uu/mv/src/mv.rs"
 
-  - id: "coreutils-nice"
-    name: "nice"
+  - name: "nice"
     description: "Run a program with modified scheduling priority"
     c_program:
       path: "src/nice.c"
     rust_program:
       path: "src/uu/nice/src/nice.rs"
 
-  - id: "coreutils-nl"
-    name: "nl"
+  - name: "nl"
     description: "Number lines of files"
     c_program:
       path: "src/nl.c"
     rust_program:
       path: "src/uu/nl/src/nl.rs"
 
-  - id: "coreutils-nohup"
-    name: "nohup"
+  - name: "nohup"
     description: "Run a command immune to hangups"
     c_program:
       path: "src/nohup.c"
     rust_program:
       path: "src/uu/nohup/src/nohup.rs"
 
-  - id: "coreutils-nproc"
-    name: "nproc"
+  - name: "nproc"
     description: "Print the number of processing units available"
     c_program:
       path: "src/nproc.c"
     rust_program:
       path: "src/uu/nproc/src/nproc.rs"
 
-  - id: "coreutils-numfmt"
-    name: "numfmt"
+  - name: "numfmt"
     description: "Convert numbers from/to human-readable strings"
     c_program:
       path: "src/numfmt.c"
     rust_program:
       path: "src/uu/numfmt/src/numfmt.rs"
 
-  - id: "coreutils-od"
-    name: "od"
+  - name: "od"
     description: "Dump files in octal and other formats"
     c_program:
       path: "src/od.c"
     rust_program:
       path: "src/uu/od/src/od.rs"
 
-  - id: "coreutils-paste"
-    name: "paste"
+  - name: "paste"
     description: "Merge lines of files"
     c_program:
       path: "src/paste.c"
     rust_program:
       path: "src/uu/paste/src/paste.rs"
 
-  - id: "coreutils-pathchk"
-    name: "pathchk"
+  - name: "pathchk"
     description: "Check whether file names are valid or portable"
     c_program:
       path: "src/pathchk.c"
     rust_program:
       path: "src/uu/pathchk/src/pathchk.rs"
 
-  - id: "coreutils-pinky"
-    name: "pinky"
+  - name: "pinky"
     description: "Lightweight finger"
     c_program:
       path: "src/pinky.c"
     rust_program:
       path: "src/uu/pinky/src/pinky.rs"
 
-  - id: "coreutils-pr"
-    name: "pr"
+  - name: "pr"
     description: "Convert text files for printing"
     c_program:
       path: "src/pr.c"
     rust_program:
       path: "src/uu/pr/src/pr.rs"
 
-  - id: "coreutils-printenv"
-    name: "printenv"
+  - name: "printenv"
     description: "Print all or part of environment"
     c_program:
       path: "src/printenv.c"
     rust_program:
       path: "src/uu/printenv/src/printenv.rs"
 
-  - id: "coreutils-printf"
-    name: "printf"
+  - name: "printf"
     description: "Format and print data"
     c_program:
       path: "src/printf.c"
     rust_program:
       path: "src/uu/printf/src/printf.rs"
 
-  - id: "coreutils-ptx"
-    name: "ptx"
+  - name: "ptx"
     description: "Produce a permuted index of file contents"
     c_program:
       path: "src/ptx.c"
     rust_program:
       path: "src/uu/ptx/src/ptx.rs"
 
-  - id: "coreutils-pwd"
-    name: "pwd"
+  - name: "pwd"
     description: "Print name of current/working directory"
     c_program:
       path: "src/pwd.c"
     rust_program:
       path: "src/uu/pwd/src/pwd.rs"
 
-  - id: "coreutils-readlink"
-    name: "readlink"
+  - name: "readlink"
     description: "Print resolved symbolic links or canonical file names"
     c_program:
       path: "src/readlink.c"
     rust_program:
       path: "src/uu/readlink/src/readlink.rs"
 
-  - id: "coreutils-realpath"
-    name: "realpath"
+  - name: "realpath"
     description: "Print the resolved path"
     c_program:
       path: "src/realpath.c"
     rust_program:
       path: "src/uu/realpath/src/realpath.rs"
 
-  - id: "coreutils-rm"
-    name: "rm"
+  - name: "rm"
     description: "Remove files or directories"
     c_program:
       path: "src/rm.c"
     rust_program:
       path: "src/uu/rm/src/rm.rs"
 
-  - id: "coreutils-rmdir"
-    name: "rmdir"
+  - name: "rmdir"
     description: "Remove empty directories"
     c_program:
       path: "src/rmdir.c"
     rust_program:
       path: "src/uu/rmdir/src/rmdir.rs"
 
-  - id: "coreutils-runcon"
-    name: "runcon"
+  - name: "runcon"
     description: "Run command with specified security context"
     c_program:
       path: "src/runcon.c"
     rust_program:
       path: "src/uu/runcon/src/runcon.rs"
 
-  - id: "coreutils-seq"
-    name: "seq"
+  - name: "seq"
     description: "Print a sequence of numbers"
     c_program:
       path: "src/seq.c"
     rust_program:
       path: "src/uu/seq/src/seq.rs"
 
-  - id: "coreutils-shred"
-    name: "shred"
+  - name: "shred"
     description: "Overwrite a file to hide its contents, and optionally delete it"
     c_program:
       path: "src/shred.c"
     rust_program:
       path: "src/uu/shred/src/shred.rs"
 
-  - id: "coreutils-shuf"
-    name: "shuf"
+  - name: "shuf"
     description: "Generate random permutations"
     c_program:
       path: "src/shuf.c"
     rust_program:
       path: "src/uu/shuf/src/shuf.rs"
 
-  - id: "coreutils-sleep"
-    name: "sleep"
+  - name: "sleep"
     description: "Delay for a specified amount of time"
     c_program:
       path: "src/sleep.c"
     rust_program:
       path: "src/uu/sleep/src/sleep.rs"
 
-  - id: "coreutils-sort"
-    name: "sort"
+  - name: "sort"
     description: "Sort lines of text files"
     c_program:
       path: "src/sort.c"
     rust_program:
       path: "src/uu/sort/src/sort.rs"
 
-  - id: "coreutils-split"
-    name: "split"
+  - name: "split"
     description: "Split a file into pieces"
     c_program:
       path: "src/split.c"
     rust_program:
       path: "src/uu/split/src/split.rs"
 
-  - id: "coreutils-stat"
-    name: "stat"
+  - name: "stat"
     description: "Display file or file system status"
     c_program:
       path: "src/stat.c"
     rust_program:
       path: "src/uu/stat/src/stat.rs"
 
-  - id: "coreutils-stdbuf"
-    name: "stdbuf"
+  - name: "stdbuf"
     description: "Run command with modified buffering for its standard streams"
     c_program:
       path: "src/stdbuf.c"
     rust_program:
       path: "src/uu/stdbuf/src/stdbuf.rs"
 
-  - id: "coreutils-stty"
-    name: "stty"
+  - name: "stty"
     description: "Change and print terminal line settings"
     c_program:
       path: "src/stty.c"
     rust_program:
       path: "src/uu/stty/src/stty.rs"
 
-  - id: "coreutils-sum"
-    name: "sum"
+  - name: "sum"
     description: "Checksum and count the blocks in a file"
     c_program:
       path: "src/sum.c"
     rust_program:
       path: "src/uu/sum/src/sum.rs"
 
-  - id: "coreutils-sync"
-    name: "sync"
+  - name: "sync"
     description: "Synchronize cached writes to persistent storage"
     c_program:
       path: "src/sync.c"
     rust_program:
       path: "src/uu/sync/src/sync.rs"
 
-  - id: "coreutils-tac"
-    name: "tac"
+  - name: "tac"
     description: "Concatenate and print files in reverse"
     c_program:
       path: "src/tac.c"
     rust_program:
       path: "src/uu/tac/src/tac.rs"
 
-  - id: "coreutils-tail"
-    name: "tail"
+  - name: "tail"
     description: "Output the last part of files"
     c_program:
       path: "src/tail.c"
     rust_program:
       path: "src/uu/tail/src/tail.rs"
 
-  - id: "coreutils-tee"
-    name: "tee"
+  - name: "tee"
     description: "Read from standard input and write to standard output and files"
     c_program:
       path: "src/tee.c"
     rust_program:
       path: "src/uu/tee/src/tee.rs"
 
-  - id: "coreutils-test"
-    name: "test"
+  - name: "test"
     description: "Check file types and compare values"
     c_program:
       path: "src/test.c"
     rust_program:
       path: "src/uu/test/src/test.rs"
 
-  - id: "coreutils-timeout"
-    name: "timeout"
+  - name: "timeout"
     description: "Run a command with a time limit"
     c_program:
       path: "src/timeout.c"
     rust_program:
       path: "src/uu/timeout/src/timeout.rs"
 
-  - id: "coreutils-touch"
-    name: "touch"
+  - name: "touch"
     description: "Change file timestamps"
     c_program:
       path: "src/touch.c"
     rust_program:
       path: "src/uu/touch/src/touch.rs"
 
-  - id: "coreutils-tr"
-    name: "tr"
+  - name: "tr"
     description: "Translate or delete characters"
     c_program:
       path: "src/tr.c"
     rust_program:
       path: "src/uu/tr/src/tr.rs"
 
-  - id: "coreutils-true"
-    name: "true"
+  - name: "true"
     description: "Do nothing, successfully"
     c_program:
       path: "src/true.c"
     rust_program:
       path: "src/uu/true/src/true.rs"
 
-  - id: "coreutils-truncate"
-    name: "truncate"
+  - name: "truncate"
     description: "Shrink or extend the size of a file to the specified size"
     c_program:
       path: "src/truncate.c"
     rust_program:
       path: "src/uu/truncate/src/truncate.rs"
 
-  - id: "coreutils-tsort"
-    name: "tsort"
+  - name: "tsort"
     description: "Perform topological sort"
     c_program:
       path: "src/tsort.c"
     rust_program:
       path: "src/uu/tsort/src/tsort.rs"
 
-  - id: "coreutils-tty"
-    name: "tty"
+  - name: "tty"
     description: "Print the file name of the terminal connected to standard input"
     c_program:
       path: "src/tty.c"
     rust_program:
       path: "src/uu/tty/src/tty.rs"
 
-  - id: "coreutils-uname"
-    name: "uname"
+  - name: "uname"
     description: "Print system information"
     c_program:
       path: "src/uname.c"
     rust_program:
       path: "src/uu/uname/src/uname.rs"
 
-  - id: "coreutils-unexpand"
-    name: "unexpand"
+  - name: "unexpand"
     description: "Convert spaces to tabs"
     c_program:
       path: "src/unexpand.c"
     rust_program:
       path: "src/uu/unexpand/src/unexpand.rs"
 
-  - id: "coreutils-uniq"
-    name: "uniq"
+  - name: "uniq"
     description: "Report or omit repeated lines"
     c_program:
       path: "src/uniq.c"
     rust_program:
       path: "src/uu/uniq/src/uniq.rs"
 
-  - id: "coreutils-unlink"
-    name: "unlink"
+  - name: "unlink"
     description: "Call the unlink function to remove the specified file"
     c_program:
       path: "src/unlink.c"
     rust_program:
       path: "src/uu/unlink/src/unlink.rs"
 
-  - id: "coreutils-uptime"
-    name: "uptime"
+  - name: "uptime"
     description: "Tell how long the system has been running"
     c_program:
       path: "src/uptime.c"
     rust_program:
       path: "src/uu/uptime/src/uptime.rs"
 
-  - id: "coreutils-users"
-    name: "users"
+  - name: "users"
     description: "Print the user names of users currently logged in"
     c_program:
       path: "src/users.c"
     rust_program:
       path: "src/uu/users/src/users.rs"
 
-  - id: "coreutils-vdir"
-    name: "vdir"
+  - name: "vdir"
     description: "List directory contents in long format by default"
     c_program:
       path: "src/ls.c"
     rust_program:
       path: "src/uu/vdir/src/vdir.rs"
 
-  - id: "coreutils-wc"
-    name: "wc"
+  - name: "wc"
     description: "Print newline, word, and byte counts for each file"
     c_program:
       path: "src/wc.c"
     rust_program:
       path: "src/uu/wc/src/wc.rs"
 
-  - id: "coreutils-who"
-    name: "who"
+  - name: "who"
     description: "Show who is logged on"
     c_program:
       path: "src/who.c"
     rust_program:
       path: "src/uu/who/src/who.rs"
 
-  - id: "coreutils-whoami"
-    name: "whoami"
+  - name: "whoami"
     description: "Print effective userid"
     c_program:
       path: "src/whoami.c"
     rust_program:
       path: "src/uu/whoami/src/whoami.rs"
 
-  - id: "coreutils-yes"
-    name: "yes"
+  - name: "yes"
     description: "Output a string repeatedly until killed"
     c_program:
       path: "src/yes.c"
