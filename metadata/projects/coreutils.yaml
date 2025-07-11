@@ -1,20 +1,43 @@
 project:
   name: coreutils
-  description: Cross-platform Rust rewrite of the GNU coreutils.
   description_url: https://github.com/uutils/coreutils/blob/main/README.md
-  relationship_type: rewrite
+  translation: manual
+  features: identical
   c_project:
-    project_url: https://github.com/coreutils/coreutils
+    url: https://git.savannah.gnu.org/git/coreutils
+    version: 9.5
+    setup:
+      - ./bootstrap
+    build:
+     - ./configure
+     - make
+    test:
+     - make check
+    dependencies:
+      - autoconf
+      - automake
+      - libtool
+      - gettext
   rust_project:
-    project_url: https://github.com/uutils/coreutils/tree/main
+    url: https://github.com/uutils/coreutils/
+    version: 0.10
+    setup:
+    build:
+     - cargo build --release
+    test:
+     - cargo test
+    dependencies:
+     - rust >= 1.7
 
 pairs:
-  - name: "arch"
-    description: "Display machine architecture"
-    c_program:
-      path: "src/arch.c"
-    rust_program:
-      path: "src/uu/arch/src/arch.rs"
+  - name: arch
+    description: Display machine architecture
+    c_project:
+      source: src/arch.c
+      executable: src/arch
+    rust_project:
+      source: src/uu/arch/src/arch.rs
+      executable: target/release/arch
 
   - name: "base32"
     description: "Base32 encode/decode data"

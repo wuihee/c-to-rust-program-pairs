@@ -2,13 +2,37 @@ pairs:
   - name: eza
     description: A modern alternative to ls.
     description_url: https://github.com/eza-community/eza/blob/main/README.md
-    relationship_type: replacement
-    c_program:
+    translation: manual
+    features: superset
+    c_project:
       url: https://github.com/coreutils/coreutils
-      path: src/ls.c
-    rust_program:
+      version: 
+      setup:
+        - ./bootstrap
+      build:
+        - ./configure
+        - make
+      test:
+        - make check
+      dependencies:
+        - autoconf
+        - automake
+        - libtool
+        - gettext
+      source: src/ls.c
+      executable: src/ls
+    rust_project:
       url: https://github.com/eza-community/eza
-      path:
+      version:
+      setup:
+      build:
+        - cargo build
+      test:
+        - cargo test
+      dependencies:
+        - rust
+      source: /
+      executable: target/release/eza
 
   - name: bat
     description: A cat(1) clone with wings.

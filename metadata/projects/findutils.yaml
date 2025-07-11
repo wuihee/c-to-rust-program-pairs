@@ -1,12 +1,22 @@
 project:
   name: findutils
-  description: Rust implementation of findutils tools.
   description_url: https://github.com/uutils/findutils/blob/main/README.md
-  relationship_type: rewrite
+  translation: manual
+  features: identical
   c_project:
-    project_url: https://ftp.gnu.org/gnu/findutils/
+    url: https://ftp.gnu.org/gnu/findutils/
+    source: src/
+    executable:
+    build:
+    dependencies:
+    tests: tests/cat/
   rust_project:
-    project_url: https://github.com/uutils/findutils
+    url: https://github.com/uutils/findutils
+    source:
+    executable:
+    build:
+    dependencies:
+    tests:
 
 pairs:
   - name: "find"

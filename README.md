@@ -14,12 +14,6 @@ There is a metadata file (name and organization TBD) that includes:
 - a URL that describes the relationship between the programs.  This might be the README for the Rust program, or a blog post, etc.
 - whether the Rust program is a direct translation, a rewrite, or a program inspired by the C program that might have different features.  If a direct translation or a rewrite, then the tests of each version ought to pass on the other implementation -- if they do not, that is a bug rather than a design choice.
 
-## TODO
-
-- [util-linux](https://github.com/uutils/util-linux)
-- [procps](https://github.com/uutils/procps)
-- [diffutils](https://github.com/uutils/diffutils)
-
 ## CLI Specification
 
 1. Create a folder with the name of the program-pair.
@@ -27,3 +21,7 @@ There is a metadata file (name and organization TBD) that includes:
 3. Copy the C program from the cloned repository into our folder.
 4. Clone the Rust repository into a temporary directory, but check if this has already been done.
 5. Copy the Rust program from the cloned repository into our folder.
+
+## Resources
+
+- [Awesome Rust](https://github.com/rust-unofficial/awesome-rust)

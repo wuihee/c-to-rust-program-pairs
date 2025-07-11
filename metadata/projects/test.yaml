@@ -1,0 +1,40 @@
+project_information:
+  name: coreutils
+  description_url: https://github.com/uutils/coreutils/blob/main/README.md
+  translation: manual
+  features: identical
+  c_program:
+    url: https://git.savannah.gnu.org/git/coreutils
+    version: 9.5
+    setup:
+      - ./bootstrap
+    build:
+     - ./configure
+     - make
+    test:
+     - make check
+    dependencies:
+      - autoconf
+      - automake
+      - libtool
+      - gettext
+  rust_program:
+    url: https://github.com/uutils/coreutils/
+    version: 0.10
+    setup:
+    build:
+     - cargo build --release
+    test:
+     - cargo test
+    dependencies:
+     - rust >= 1.7
+
+pairs:
+  - name: arch
+    description: Display machine architecture
+    c_program:
+      source: src/arch.c
+      executable: src/arch
+    rust_program:
+      source: src/uu/arch/src/arch.rs
+      executable: target/release/arch
