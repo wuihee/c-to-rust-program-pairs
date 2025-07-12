@@ -7,12 +7,12 @@ project_information:
     url: https://git.savannah.gnu.org/git/coreutils
     version: 9.5
     setup:
-      - ./bootstrap
     build:
-     - ./configure
-     - make
+      - ./bootstrap
+      - ./configure
+      - make
     test:
-     - make check
+      - make check
     dependencies:
       - autoconf
       - automake

@@ -1,0 +1,190 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://example.com/project-pairs-schema.json",
+    "title": "Project Pairs Metadata",
+    "description": "Schema for C-to-Rust project program pairs",
+    "type": "object",
+    "properties": {
+        "project_information": {
+            "type": "object",
+            "description": "Global project information and build configuration",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Project name"
+                },
+                "description_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL to project documentation"
+                },
+                "translation": {
+                    "type": "string",
+                    "enum": [
+                        "manual",
+                        "automatic"
+                    ],
+                    "description": "Type of translation process"
+                },
+                "features": {
+                    "type": "string",
+                    "enum": [
+                        "superset",
+                        "subset",
+                        "equivalent"
+                    ],
+                    "description": "Feature relationship between C and Rust implementations"
+                },
+                "c_program": {
+                    "type": "object",
+                    "description": "Global C program configuration",
+                    "properties": {
+                        "url": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "Repository URL for the C program"
+                        },
+                        "build": {
+                            "type": "array",
+                            "description": "Build commands",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "test": {
+                            "type": "array",
+                            "description": "Test commands",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "dependencies": {
+                            "type": "array",
+                            "description": "Build dependencies",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [],
+                    "additionalProperties": false
+                },
+                "rust_program": {
+                    "type": "object",
+                    "description": "Global Rust program configuration",
+                    "properties": {
+                        "url": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "Repository URL for the Rust program"
+                        },
+                        "build": {
+                            "type": "array",
+                            "description": "Build commands",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "test": {
+                            "type": "array",
+                            "description": "Test commands",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "dependencies": {
+                            "type": "array",
+                            "description": "Build dependencies",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [],
+                    "additionalProperties": false
+                }
+            },
+            "required": [
+                "name",
+                "features",
+                "translation",
+                "c_program",
+                "rust_program"
+            ],
+            "additionalProperties": false
+        },
+        "pairs": {
+            "type": "array",
+            "description": "Array of individual program pairs",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the program"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Brief description of what the program does"
+                    },
+                    "c_program": {
+                        "type": "object",
+                        "description": "C program specific configuration",
+                        "properties": {
+                            "source": {
+                                "type": "array",
+                                "description": "Path to source files.",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "executable": {
+                                "type": "string",
+                                "description": "Path to compiled executable"
+                            }
+                        },
+                        "required": [
+                            "source",
+                            "executable"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "rust_program": {
+                        "type": "object",
+                        "description": "Rust program specific configuration",
+                        "properties": {
+                            "source": {
+                                "type": "array",
+                                "description": "Path to source files.",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "executable": {
+                                "type": "string",
+                                "description": "Path to compiled executable"
+                            }
+                        },
+                        "required": [
+                            "source",
+                            "executable"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "required": [
+                    "name",
+                    "description",
+                    "c_program",
+                    "rust_program"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "project_information",
+        "pairs"
+    ],
+    "additionalProperties": false
+}

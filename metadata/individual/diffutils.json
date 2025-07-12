@@ -1,0 +1,52 @@
+{
+    "project": {
+        "name": "diffutils",
+        "description_url": "https://github.com/uutils/diffutils/blob/main/README.md",
+        "features": "identical",
+        "translation": "manual",
+        "c_program": {
+            "url": "https://git.savannah.gnu.org/git/diffutils.git",
+            "build": [
+                "./bootstrap",
+                "./configure",
+                "make"
+            ],
+            "test": [
+                "make test"
+            ],
+            "dependencies": [
+                "autoconf",
+                "automake",
+                "libtool",
+                "gettext"
+            ]
+        },
+        "rust_program": {
+            "url": "https://github.com/uutils/diffutils",
+            "build": [
+                "cargo build --release"
+            ],
+            "test": [
+                "cargo test"
+            ]
+        }
+    },
+    "pairs": [
+        {
+            "name": "diff",
+            "description": "Show differences between two files.",
+            "c_program": {
+                "source": [
+                    "src/diff.c"
+                ],
+                "executable": "src/diff"
+            },
+            "rust_program": {
+                "source": [
+                    "src/diff.rs"
+                ],
+                "executable": "/target/release/arch"
+            }
+        }
+    ]
+}
