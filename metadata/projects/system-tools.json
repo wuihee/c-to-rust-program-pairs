@@ -1,0 +1,169 @@
+{
+    "pairs": [
+        {
+            "name": "eza",
+            "description": "A modern alternative to ls.",
+            "description_url": "https://github.com/eza-community/eza/blob/main/README.md",
+            "translation": "manual",
+            "features": "superset",
+            "c_program": {
+                "url": "https://github.com/coreutils/coreutils",
+                "build": [
+                    "./bootstrap",
+                    "./configure",
+                    "make"
+                ],
+                "test": [
+                    "make check"
+                ],
+                "dependencies": [
+                    "autoconf",
+                    "automake",
+                    "libtool",
+                    "gettext"
+                ],
+                "source": [
+                    "src/ls.c",
+                    "src/ls.h"
+                ],
+                "executable": "src/ls"
+            },
+            "rust_program": {
+                "url": "https://github.com/eza-community/eza",
+                "build": [
+                    "cargo build"
+                ],
+                "test": [
+                    "cargo test"
+                ],
+                "source": [
+                    "/"
+                ],
+                "executable": "target/release/eza"
+            }
+        },
+        {
+            "name": "bat",
+            "description": "A cat(1) clone with wings.",
+            "description_url": "https://github.com/sharkdp/bat/blob/master/README.md",
+            "translation": "manual",
+            "features": "replacement",
+            "c_program": {
+                "url": "https://github.com/coreutils/coreutils",
+                "build": [
+                    "./bootstrap",
+                    "./configure",
+                    "make"
+                ],
+                "test": [
+                    "make check"
+                ],
+                "dependencies": [
+                    "autoconf",
+                    "automake",
+                    "libtool",
+                    "gettext"
+                ],
+                "source": [
+                    "src/cat.c"
+                ],
+                "executable": "src/cat"
+            },
+            "rust_program": {
+                "url": "https://github.com/sharkdp/bat",
+                "build": [
+                    "cargo build"
+                ],
+                "test": [
+                    "cargo test"
+                ],
+                "source": [
+                    "/"
+                ],
+                "executable": "target/release/bat"
+            }
+        },
+        {
+            "name": "ripgrep",
+            "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore.",
+            "description_url": "https://github.com/BurntSushi/ripgrep/blob/master/README.md",
+            "translation": "manual",
+            "features": "replacement",
+            "c_program": {
+                "url": "https://git.savannah.gnu.org/git/grep.git",
+                "build": [
+                    "./bootstrap",
+                    "./configure",
+                    "make"
+                ],
+                "test": [
+                    "make check"
+                ],
+                "dependencies": [
+                    "autoconf",
+                    "automake",
+                    "libtool",
+                    "gettext"
+                ],
+                "source": [
+                    "/"
+                ],
+                "executable": "grep"
+            },
+            "rust_program": {
+                "url": "https://github.com/BurntSushi/ripgrep",
+                "build": [
+                    "cargo build"
+                ],
+                "test": [
+                    "cargo test"
+                ],
+                "source": [
+                    "/"
+                ],
+                "executable": "target/release/rg"
+            }
+        },
+        {
+            "name": "fd",
+            "description": "A simple, fast and user-friendly alternative to 'find'.",
+            "description_url": "https://github.com/sharkdp/fd/blob/master/README.md",
+            "translation": "manual",
+            "features": "replacement",
+            "c_program": {
+                "url": "https://ftp.gnu.org/gnu/findutils/",
+                "build": [
+                    "./bootstrap",
+                    "./configure",
+                    "make"
+                ],
+                "test": [
+                    "make check"
+                ],
+                "dependencies": [
+                    "autoconf",
+                    "automake",
+                    "libtool",
+                    "gettext"
+                ],
+                "source": [
+                    "find/find.c"
+                ],
+                "executable": "find/find"
+            },
+            "rust_program": {
+                "url": "https://github.com/sharkdp/fd",
+                "build": [
+                    "cargo build"
+                ],
+                "test": [
+                    "cargo test"
+                ],
+                "source": [
+                    "/"
+                ],
+                "executable": "target/release/fd"
+            }
+        }
+    ]
+}

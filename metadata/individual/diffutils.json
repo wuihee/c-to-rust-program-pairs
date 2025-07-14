@@ -37,9 +37,27 @@
             "description": "Show differences between two files.",
             "c_program": {
                 "source": [
-                    "src/diff.c"
+                    "src/diff.c",
+                    "src/diff.h"
                 ],
                 "executable": "src/diff"
+            },
+            "rust_program": {
+                "source": [
+                    "src/diff.rs"
+                ],
+                "executable": "/target/release/arch"
+            }
+        },
+        {
+            "name": "cmp",
+            "description": "Show the offsets and line numbers where two files differ.",
+            "c_program": {
+                "source": [
+                    "src/cmp.c",
+                    "src/cmp.h"
+                ],
+                "executable": "src/cmp"
             },
             "rust_program": {
                 "source": [
