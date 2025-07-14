@@ -2,7 +2,7 @@
     "project": {
         "name": "diffutils",
         "description_url": "https://github.com/uutils/diffutils/blob/main/README.md",
-        "features": "identical",
+        "features": "equivalent",
         "translation": "manual",
         "c_program": {
             "url": "https://git.savannah.gnu.org/git/diffutils.git",
@@ -28,6 +28,9 @@
             ],
             "test": [
                 "cargo test"
+            ],
+            "dependencies": [
+                "rust"
             ]
         }
     },
