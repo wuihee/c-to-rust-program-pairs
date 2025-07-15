@@ -3,12 +3,10 @@ mod project;
 mod schema;
 
 fn main() {
-    // let metadata = project::parse("./metadata/projects/diffutils.json").expect("Failed"); let pairs = metadata.pairs;
-    // let item = &pairs[0];
-    // println!("{}", item.name);
+    let project_metadata = project::parse("./metadata/projects/diffutils.json").expect("Failed");
+    println!("{:?}", project_metadata);
 
-    let metadata = individual::parse("./metadata/individual/system-tools.json").expect("Failed");
-    let pairs = metadata.pairs;
-    let item = &pairs[0];
-    println!("{}", item.name);
+    let individual_metadata =
+        individual::parse("./metadata/individual/system-tools.json").expect("Failed");
+    println!("{:?}", individual_metadata);
 }
