@@ -3,12 +3,14 @@ use std::{error::Error, fs};
 use crate::schema::{Features, Language, Metadata, Program, ProgramPair, Translation};
 use serde::{Deserialize, Serialize};
 
+// Schema for project metadata files.
 #[derive(Debug, Serialize, Deserialize)]
 struct ProjectMetadata {
     project: ProjectGlobal,
     pairs: Vec<ProjectProgramPair>,
 }
 
+// Global information about the project that apply to every program pair.
 #[derive(Debug, Serialize, Deserialize)]
 struct ProjectGlobal {
     name: String,
@@ -19,6 +21,7 @@ struct ProjectGlobal {
     rust_program: ProjectGlobalProgram,
 }
 
+// Global information that applies to each specific C / Rust program.
 #[derive(Debug, Serialize, Deserialize)]
 struct ProjectGlobalProgram {
     url: String,
@@ -27,6 +30,7 @@ struct ProjectGlobalProgram {
     dependencies: Vec<String>,
 }
 
+// Specific information for each individual program pair.
 #[derive(Debug, Serialize, Deserialize)]
 struct ProjectProgramPair {
     name: String,
@@ -35,12 +39,14 @@ struct ProjectProgramPair {
     rust_program: ProjectProgram,
 }
 
+// Specific information for each individual C / Rust program in a pair.
 #[derive(Debug, Serialize, Deserialize)]
 struct ProjectProgram {
     source: Vec<String>,
     executable: String,
 }
 
+// Parses a project metadata file into a schema::Metadata object.
 pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
     let raw_metadata = fs::read_to_string(path)?;
     let project_metadata: ProjectMetadata = serde_json::from_str(&raw_metadata)?;

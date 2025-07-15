@@ -3,11 +3,13 @@ use std::{error::Error, fs};
 use crate::schema::{Features, Language, Metadata, Program, ProgramPair, Translation};
 use serde::{Deserialize, Serialize};
 
+// Schema for individual metadata files.
 #[derive(Debug, Serialize, Deserialize)]
 struct IndividualMetadata {
     pairs: Vec<IndividualProgramPair>,
 }
 
+// Contains information for each program pair.
 #[derive(Debug, Serialize, Deserialize)]
 struct IndividualProgramPair {
     name: String,
@@ -19,6 +21,7 @@ struct IndividualProgramPair {
     rust_program: IndividualProgram,
 }
 
+// Contains information for each C / Rust program in each pair.
 #[derive(Debug, Serialize, Deserialize)]
 struct IndividualProgram {
     url: String,
@@ -29,6 +32,7 @@ struct IndividualProgram {
     executable: String,
 }
 
+// Parses an individual metadata file into a schema::Metadata object.
 pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
     let raw_metadata = fs::read_to_string(path)?;
     let individual_metadata: IndividualMetadata = serde_json::from_str(&raw_metadata)?;
