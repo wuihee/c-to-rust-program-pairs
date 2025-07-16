@@ -24,4 +24,4 @@ There is a metadata file (name and organization TBD) that includes:
 
 ## Resources
 
-- [Awesome Rust](https://github.com/rust-unofficial/awesome-rust)
+- [Awesome Rust](https://github.com/rust-unofficial/awesome-rust): Contains a list of awesome Rust projects - many of which might be translated from C projects.
