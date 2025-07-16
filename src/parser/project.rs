@@ -1,6 +1,6 @@
 use std::{error::Error, fs};
 
-use crate::schema::{Features, Language, Metadata, Program, ProgramPair, Translation};
+use super::schema::{Features, Language, Metadata, Program, ProgramPair, Translation};
 use serde::{Deserialize, Serialize};
 
 // Schema for project metadata files.

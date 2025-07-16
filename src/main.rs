@@ -1,6 +1,6 @@
-mod individual;
-mod project;
-mod schema;
+mod parser;
+
+use parser::{individual, project};
 
 fn main() {
     let project_metadata = project::parse("./metadata/projects/diffutils.json").expect("Failed");
