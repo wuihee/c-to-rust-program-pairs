@@ -1,7 +1,7 @@
-use std::{error::Error, fs};
-
 use super::schema::{Features, Language, Metadata, Program, ProgramPair, Translation};
+use super::validator;
 use serde::{Deserialize, Serialize};
+use std::{error::Error, fs};
 
 // Schema for individual metadata files.
 #[derive(Debug, Serialize, Deserialize)]
@@ -67,5 +67,8 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
         })
         .collect();
 
-    Ok(Metadata { pairs })
+    let metadata = Metadata { pairs };
+    let _ = validator::validate(&metadata, "./metadata/individual.schema.json");
+
+    Ok(metadata)
 }
