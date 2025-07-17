@@ -4,7 +4,7 @@
     "description": "Schema for C-to-Rust program pairs.",
     "type": "object",
     "properties": {
-        "pairs": {
+        "pair": {
             "type": "array",
             "description": "Array of program pair configurations",
             "items": {
@@ -12,24 +12,24 @@
                 "properties": {
                     "name": {
                         "type": "string",
-                        "description": "Name of the program"
+                        "description": "Name of both C and Rust program"
                     },
                     "description": {
                         "type": "string",
                         "description": "Brief description of the program"
                     },
-                    "description_url": {
-                        "type": "string",
-                        "format": "uri",
-                        "description": "URL to detailed description or documentation"
-                    },
                     "translation": {
                         "type": "string",
                         "enum": [
                             "manual",
+                            "semi-automatic",
                             "automatic"
                         ],
                         "description": "Type of translation process"
+                    },
+                    "tool": {
+                        "type": "string",
+                        "description": "The tool used for the translation."
                     },
                     "features": {
                         "type": "string",
@@ -42,9 +42,14 @@
                     },
                     "c_program": {
                         "type": "object",
-                        "description": "Details of the C program",
+                        "description": "The C program",
                         "properties": {
-                            "url": {
+                            "description_url": {
+                                "type": "string",
+                                "format": "uri",
+                                "description": "URL to detailed description or documentation of the C program"
+                            },
+                            "repo_url": {
                                 "type": "string",
                                 "format": "uri",
                                 "description": "Repository URL for the C program"
@@ -92,9 +97,14 @@
                     },
                     "rust_program": {
                         "type": "object",
-                        "description": "Details for the Rust program",
+                        "description": "The Rust program",
                         "properties": {
-                            "url": {
+                            "description_url": {
+                                "type": "string",
+                                "format": "uri",
+                                "description": "URL to detailed description or documentation of the Rust program"
+                            },
+                            "repo_url": {
                                 "type": "string",
                                 "format": "uri",
                                 "description": "Repository URL for the Rust program"
@@ -132,7 +142,7 @@
                             },
                             "source": {
                                 "type": "array",
-                                "description": "Path to source files.",
+                                "description": "Paths to source files.",
                                 "items": {
                                     "type": "string"
                                 }
@@ -162,7 +172,7 @@
         }
     },
     "required": [
-        "pairs"
+        "pair"
     ],
     "additionalProperties": false
 }

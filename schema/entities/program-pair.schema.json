@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Program Pair Schema",
+    "definitions": {
+        "individual_program_pair": {
+            "type": "object",
+            "description": "A single C-to-Rust program pair",
+            "properties": {
+                "program_name": {
+                    "$ref": "../base/common-types.schema.json#/definitions/program_name"
+                },
+                "program_description": {
+                    "$ref": "../base/common-types.schema.json#/definitions/program_description"
+                },
+                "translation_method": {
+                    "$ref": "../base/common-types.schema.json#/definitions/translation_method"
+                },
+                "translation_tool": {
+                    "$ref": "../base/common-types.schema.json#/definitions/translation_tool"
+                },
+                "feature_relationship": {
+                    "$ref": "../base/common-types.schema.json#/definitions/feature_relationship"
+                },
+                "c_program": {
+                    "$ref": "../entities/c-program.schema.json#/definitions/c_complete_config"
+                },
+                "rust_program": {
+                    "$ref": "../entities/rust-program.schema.json#/definitions/rust_complete_config"
+                }
+            },
+            "required": [
+                "name",
+                "description",
+                "c_program",
+                "rust_program"
+            ],
+            "additionalProperties": false
+        },
+        "project_program_pair": {
+            "type": "object",
+            "description": "A program pair within a project context",
+            "properties": {
+                "program_name": {
+                    "$ref": "../base/common-types.schema.json#/definitions/program_name"
+                },
+                "program_description": {
+                    "$ref": "../base/common-types.schema.json#/definitions/program_description"
+                },
+                "c_program": {
+                    "$ref": "../entities/c-program.schema.json#/definitions/c_specific_config"
+                },
+                "rust_program": {
+                    "$ref": "../entities/rust-program.schema.json#/definitions/rust_specific_config"
+                }
+            },
+            "required": [
+                "name",
+                "description",
+                "c_program",
+                "rust_program"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

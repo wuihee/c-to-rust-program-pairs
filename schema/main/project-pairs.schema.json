@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Project Pairs Metadata",
+    "description": "Schema for C-to-Rust project program pairs",
+    "type": "object",
+    "properties": {
+        "project_information": {
+            "type": "object",
+            "description": "Global project information and build configuration",
+            "properties": {
+                "program_name": {
+                    "$ref": "../base/common-types.schema.json#/definitions/program_name"
+                },
+                "documentation_url": {
+                    "$ref": "../base/common-types.schema.json#/definitions/documentation_url"
+                },
+                "translation_method": {
+                    "$ref": "../base/common-types.schema.json#/definitions/translation_method"
+                },
+                "translation_tool": {
+                    "$ref": "../base/common-types.schema.json#/definitions/translation_tool"
+                },
+                "feature_relationship": {
+                    "$ref": "../base/common-types.schema.json#/definitions/feature_relationship"
+                },
+                "c_program": {
+                    "$ref": "../entities/c-program.schema.json#/definitions/c_global_config"
+                },
+                "rust_program": {
+                    "$ref": "../entities/rust-program.schema.json#/definitions/rust_global_config"
+                }
+            },
+            "required": [
+                "name",
+                "features",
+                "translation",
+                "c_program",
+                "rust_program"
+            ],
+            "additionalProperties": false
+        },
+        "pairs": {
+            "type": "array",
+            "description": "Array of individual program pairs within the project",
+            "items": {
+                "$ref": "../entities/program-pair.schema.json#/definitions/project_program_pair"
+            }
+        }
+    },
+    "required": [
+        "project_information",
+        "pairs"
+    ],
+    "additionalProperties": false
+}

@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Base Program Schema",
+    "definitions": {
+        "global_program_config": {
+            "type": "object",
+            "description": "Global program configuration (shared across all pairs)",
+            "properties": {
+                "repository_url": {
+                    "$ref": "../base/common-types.schema.json#/definitions/repository_url"
+                },
+                "build_commands": {
+                    "$ref": "../base/common-types.schema.json#/definitions/build_commands"
+                },
+                "test_commands": {
+                    "$ref": "../base/common-types.schema.json#/definitions/test_commands"
+                },
+                "dependencies": {
+                    "$ref": "../base/common-types.schema.json#/definitions/dependencies"
+                }
+            },
+            "additionalProperties": false
+        },
+        "specific_program_config": {
+            "type": "object",
+            "description": "Program-specific configuration (per individual pair)",
+            "properties": {
+                "source_paths": {
+                    "$ref": "../base/common-types.schema.json#/definitions/source_paths"
+                },
+                "executable_paths": {
+                    "$ref": "../base/common-types.schema.json#/definitions/executable_paths"
+                }
+            },
+            "additionalProperties": false
+        },
+        "complete_program_config": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/global_program_config"
+                },
+                {
+                    "$ref": "#/definitions/specific_program_config"
+                }
+            ],
+            "description": "Complete program configuration combining global and specific settings"
+        }
+    }
+}

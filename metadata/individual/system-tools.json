@@ -1,19 +1,20 @@
 {
     "pairs": [
         {
-            "name": "eza",
-            "description": "A modern alternative to ls.",
-            "description_url": "https://github.com/eza-community/eza/blob/main/README.md",
-            "translation": "manual",
-            "features": "superset",
+            "program_name": "eza",
+            "program_description": "A modern alternative to ls.",
+            "translation_method": "manual",
+            "translation_tool": "",
+            "feature_relationship": "superset",
             "c_program": {
-                "url": "https://github.com/coreutils/coreutils",
-                "build": [
+                "documentation_url": "",
+                "repository_url": "https://github.com/coreutils/coreutils",
+                "build_commands": [
                     "./bootstrap",
                     "./configure",
                     "make"
                 ],
-                "test": [
+                "test_commands": [
                     "make check"
                 ],
                 "dependencies": [
@@ -22,43 +23,49 @@
                     "libtool",
                     "gettext"
                 ],
-                "source": [
+                "source_paths": [
                     "src/ls.c",
                     "src/ls.h"
                 ],
-                "executable": "src/ls"
+                "executable_paths": [
+                    "src/ls"
+                ]
             },
             "rust_program": {
-                "url": "https://github.com/eza-community/eza",
-                "build": [
+                "documentation_url": "https://github.com/eza-community/eza/blob/main/README.md",
+                "repository_url": "https://github.com/eza-community/eza",
+                "build_commands": [
                     "cargo build"
                 ],
-                "test": [
+                "test_commands": [
                     "cargo test"
                 ],
                 "dependencies": [
                     "rust"
                 ],
-                "source": [
+                "source_paths": [
                     "/"
                 ],
-                "executable": "target/release/eza"
+                "executable_paths": [
+                    "target/release/eza"
+                ]
             }
         },
         {
-            "name": "bat",
-            "description": "A cat(1) clone with wings.",
-            "description_url": "https://github.com/sharkdp/bat/blob/master/README.md",
-            "translation": "manual",
-            "features": "superset",
+            "program_name": "bat",
+            "program_description": "A cat(1) clone with wings.",
+            "translation_method": "manual",
+            "translation_tool": "",
+            "feature_relationship": "superset",
             "c_program": {
-                "url": "https://github.com/coreutils/coreutils",
-                "build": [
+                "documentation_url": "",
+                "repository_url": "https://github.com/coreutils/coreutils",
+                "build_commands": [
                     "./bootstrap",
                     "./configure",
                     "make"
                 ],
-                "test": [
+                "test_commands": [
                     "make check"
                 ],
                 "dependencies": [
@@ -67,42 +74,48 @@
                     "libtool",
                     "gettext"
                 ],
-                "source": [
+                "source_paths": [
                     "src/cat.c"
                 ],
-                "executable": "src/cat"
+                "executable_paths": [
+                    "src/cat"
+                ]
             },
             "rust_program": {
-                "url": "https://github.com/sharkdp/bat",
-                "build": [
+                "documentation_url": "https://github.com/sharkdp/bat/blob/master/README.md",
+                "repository_url": "https://github.com/sharkdp/bat",
+                "build_commands": [
                     "cargo build"
                 ],
-                "test": [
+                "test_commands": [
                     "cargo test"
                 ],
                 "dependencies": [
                     "rust"
                 ],
-                "source": [
+                "source_paths": [
                     "/"
                 ],
-                "executable": "target/release/bat"
+                "executable_paths": [
+                    "target/release/bat"
+                ]
             }
         },
         {
-            "name": "ripgrep",
-            "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore.",
-            "description_url": "https://github.com/BurntSushi/ripgrep/blob/master/README.md",
-            "translation": "manual",
-            "features": "superset",
+            "program_name": "ripgrep",
+            "program_description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore.",
+            "translation_method": "manual",
+            "translation_tool": "",
+            "feature_relationship": "superset",
             "c_program": {
-                "url": "https://git.savannah.gnu.org/git/grep.git",
-                "build": [
+                "documentation_url": "",
+                "repository_url": "https://git.savannah.gnu.org/git/grep.git",
+                "build_commands": [
                     "./bootstrap",
                     "./configure",
                     "make"
                 ],
-                "test": [
+                "test_commands": [
                     "make check"
                 ],
                 "dependencies": [
@@ -111,42 +124,48 @@
                     "libtool",
                     "gettext"
                 ],
-                "source": [
+                "source_paths": [
                     "/"
                 ],
-                "executable": "grep"
+                "executable_paths": [
+                    "grep"
+                ]
             },
             "rust_program": {
-                "url": "https://github.com/BurntSushi/ripgrep",
-                "build": [
+                "documentation_url": "https://github.com/BurntSushi/ripgrep/blob/master/README.md",
+                "repository_url": "https://github.com/BurntSushi/ripgrep",
+                "build_commands": [
                     "cargo build"
                 ],
-                "test": [
+                "test_commands": [
                     "cargo test"
                 ],
                 "dependencies": [
                     "rust"
                 ],
-                "source": [
+                "source_paths": [
                     "/"
                 ],
-                "executable": "target/release/rg"
+                "executable_paths": [
+                    "target/release/rg"
+                ]
             }
         },
         {
-            "name": "fd",
-            "description": "A simple, fast and user-friendly alternative to 'find'.",
-            "description_url": "https://github.com/sharkdp/fd/blob/master/README.md",
-            "translation": "manual",
-            "features": "superset",
+            "program_name": "fd",
+            "program_description": "A simple, fast and user-friendly alternative to 'find'.",
+            "translation_method": "manual",
+            "translation_tool": "",
+            "feature_relationship": "superset",
             "c_program": {
-                "url": "https://ftp.gnu.org/gnu/findutils/",
-                "build": [
+                "documentation_url": "",
+                "repository_url": "https://ftp.gnu.org/gnu/findutils/",
+                "build_commands": [
                     "./bootstrap",
                     "./configure",
                     "make"
                 ],
-                "test": [
+                "test_commands": [
                     "make check"
                 ],
                 "dependencies": [
@@ -155,26 +174,31 @@
                     "libtool",
                     "gettext"
                 ],
-                "source": [
+                "source_paths": [
                     "find/find.c"
                 ],
-                "executable": "find/find"
+                "executable_paths": [
+                    "find/find"
+                ]
             },
             "rust_program": {
-                "url": "https://github.com/sharkdp/fd",
-                "build": [
+                "documentation_url": "https://github.com/sharkdp/fd/blob/master/README.md",
+                "repository_url": "https://github.com/sharkdp/fd",
+                "build_commands": [
                     "cargo build"
                 ],
-                "test": [
+                "test_commands": [
                     "cargo test"
                 ],
                 "dependencies": [
                     "rust"
                 ],
-                "source": [
+                "source_paths": [
                     "/"
                 ],
-                "executable": "target/release/fd"
+                "executable_paths": [
+                    "target/release/fd"
+                ]
             }
         }
     ]

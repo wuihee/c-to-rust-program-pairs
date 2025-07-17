@@ -10,11 +10,11 @@ pub struct Metadata {
 // Contains information about each C-to-Rust program pair.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ProgramPair {
-    pub name: String,
-    pub description: String,
-    pub description_url: String,
-    pub translation: Translation,
-    pub features: Features,
+    pub program_name: String,
+    pub program_description: String,
+    pub translation_method: Translation,
+    pub translation_tool: String,
+    pub feature_relationship: Features,
     pub c_program: Program,
     pub rust_program: Program,
 }
@@ -23,12 +23,13 @@ pub struct ProgramPair {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Program {
     pub language: Language,
-    pub url: String,
-    pub build: Vec<String>,
-    pub test: Vec<String>,
+    pub documentation_url: String,
+    pub repository_url: String,
+    pub build_commands: Vec<String>,
+    pub test_commands: Vec<String>,
     pub dependencies: Vec<String>,
-    pub source: Vec<String>,
-    pub executable: String,
+    pub source_paths: Vec<String>,
+    pub executable_paths: Vec<String>,
 }
 
 // Specifies the method of translating from C to Rust.

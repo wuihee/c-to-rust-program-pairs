@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "C Program Schema",
+    "definitions": {
+        "c_global_config": {
+            "allOf": [
+                {
+                    "$ref": "../base/program-base.schema.json#/definitions/global_program_config"
+                }
+            ],
+            "type": "object",
+            "description": "Global C program configuration"
+        },
+        "c_specific_config": {
+            "allOf": [
+                {
+                    "$ref": "../base/program-base.schema.json#/definitions/specific_program_config"
+                }
+            ],
+            "type": "object",
+            "description": "C program specific configuration"
+        },
+        "c_complete_config": {
+            "allOf": [
+                {
+                    "$ref": "../base/program-base.schema.json#/definitions/complete_program_config"
+                }
+            ],
+            "type": "object",
+            "description": "Complete C program configuration",
+            "required": [
+                "url",
+                "build",
+                "source",
+                "executable"
+            ]
+        }
+    }
+}

@@ -12,11 +12,11 @@ struct IndividualMetadata {
 // Contains information for each program pair.
 #[derive(Debug, Serialize, Deserialize)]
 struct IndividualProgramPair {
-    name: String,
-    description: String,
-    description_url: String,
-    translation: Translation,
-    features: Features,
+    program_name: String,
+    program_description: String,
+    translation_method: Translation,
+    translation_tool: String,
+    feature_relationship: Features,
     c_program: IndividualProgram,
     rust_program: IndividualProgram,
 }
@@ -24,12 +24,13 @@ struct IndividualProgramPair {
 // Contains information for each C / Rust program in each pair.
 #[derive(Debug, Serialize, Deserialize)]
 struct IndividualProgram {
-    url: String,
-    build: Vec<String>,
-    test: Vec<String>,
+    documentation_url: String,
+    repository_url: String,
+    build_commands: Vec<String>,
+    test_commands: Vec<String>,
     dependencies: Vec<String>,
-    source: Vec<String>,
-    executable: String,
+    source_paths: Vec<String>,
+    executable_paths: Vec<String>,
 }
 
 // Parses an individual metadata file into a schema::Metadata object.
@@ -41,34 +42,36 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
         .pairs
         .into_iter()
         .map(|pair| ProgramPair {
-            name: pair.name,
-            description: pair.description,
-            description_url: pair.description_url,
-            translation: pair.translation,
-            features: pair.features,
+            program_name: pair.program_name,
+            program_description: pair.program_description,
+            translation_method: pair.translation_method,
+            translation_tool: pair.translation_tool,
+            feature_relationship: pair.feature_relationship,
             c_program: Program {
                 language: Language::C,
-                url: pair.c_program.url,
-                build: pair.c_program.build,
-                test: pair.c_program.test,
+                documentation_url: pair.c_program.documentation_url,
+                repository_url: pair.c_program.repository_url,
+                build_commands: pair.c_program.build_commands,
+                test_commands: pair.c_program.test_commands,
                 dependencies: pair.c_program.dependencies,
-                source: pair.c_program.source,
-                executable: pair.c_program.executable,
+                source_paths: pair.c_program.source_paths,
+                executable_paths: pair.c_program.executable_paths,
             },
             rust_program: Program {
                 language: Language::Rust,
-                url: pair.rust_program.url,
-                build: pair.rust_program.build,
-                test: pair.rust_program.test,
+                documentation_url: pair.rust_program.documentation_url,
+                repository_url: pair.rust_program.repository_url,
+                build_commands: pair.rust_program.build_commands,
+                test_commands: pair.rust_program.test_commands,
                 dependencies: pair.rust_program.dependencies,
-                source: pair.rust_program.source,
-                executable: pair.rust_program.executable,
+                source_paths: pair.rust_program.source_paths,
+                executable_paths: pair.rust_program.executable_paths,
             },
         })
         .collect();
 
     let metadata = Metadata { pairs };
-    let _ = validator::validate(&metadata, "./metadata/individual.schema.json");
+    let _ = validator::validate(&metadata, "./schema/main/individual-pairs.schema.json");
 
     Ok(metadata)
 }

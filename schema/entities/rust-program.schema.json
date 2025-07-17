@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Rust Program Schema",
+    "definitions": {
+        "rust_global_config": {
+            "allOf": [
+                {
+                    "$ref": "../base/program-base.schema.json#/definitions/global_program_config"
+                }
+            ],
+            "type": "object",
+            "description": "Global Rust program configuration"
+        },
+        "rust_specific_config": {
+            "allOf": [
+                {
+                    "$ref": "../base/program-base.schema.json#/definitions/specific_program_config"
+                }
+            ],
+            "type": "object",
+            "description": "Rust program specific configuration"
+        },
+        "rust_complete_config": {
+            "allOf": [
+                {
+                    "$ref": "../base/program-base.schema.json#/definitions/complete_program_config"
+                }
+            ],
+            "type": "object",
+            "description": "Complete Rust program configuration",
+            "required": [
+                "url",
+                "build",
+                "source",
+                "executable"
+            ]
+        }
+    }
+}
