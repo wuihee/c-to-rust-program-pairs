@@ -28,7 +28,7 @@
                 "semi-automatic",
                 "automatic"
             ],
-            "description": "Type of translation process used"
+            "description": "Translation process type. Manual: hand-written from scratch. Semi-automatic: mix of automated tools and manual work. Automatic: primarily tool-generated"
         },
         "translation_tool": {
             "type": "string",
@@ -39,9 +39,34 @@
             "enum": [
                 "superset",
                 "subset",
-                "equivalent"
+                "equivalent",
+                "overlapping"
             ],
             "description": "Feature relationship between C and Rust implementations"
+        },
+        "dependencies": {
+            "type": "object",
+            "description": "Build dependencies for each operating system",
+            "properties": {
+                "linux": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "mac": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "windows": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
         },
         "build_commands": {
             "type": "array",
@@ -53,13 +78,6 @@
         "test_commands": {
             "type": "array",
             "description": "Commands to test the program",
-            "items": {
-                "type": "string"
-            }
-        },
-        "dependencies": {
-            "type": "array",
-            "description": "Build or runtime dependencies",
             "items": {
                 "type": "string"
             }
