@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Base Program Schema",
+    "definitions": {
+        "individual_program_config": {
+            "type": "object",
+            "description": "Program-specific configuration (per individual pair)",
+            "properties": {
+                "source_paths": {
+                    "$ref": "./fields.schema.json#/definitions/source_paths"
+                },
+                "executable_paths": {
+                    "$ref": "./fields.schema.json#/definitions/executable_paths"
+                }
+            },
+            "additionalProperties": false
+        },
+        "project_program_config": {
+            "type": "object",
+            "description": "Global program configuration (shared across all pairs)",
+            "properties": {
+                "repository_url": {
+                    "$ref": "./fields.schema.json#/definitions/repository_url"
+                },
+                "build_commands": {
+                    "$ref": "./fields.schema.json#/definitions/build_commands"
+                },
+                "test_commands": {
+                    "$ref": "./fields.schema.json#/definitions/test_commands"
+                },
+                "dependencies": {
+                    "$ref": "./fields.schema.json#/definitions/dependencies"
+                }
+            },
+            "additionalProperties": false
+        },
+        "complete_program_config": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/global_program_config"
+                },
+                {
+                    "$ref": "#/definitions/specific_program_config"
+                }
+            ],
+            "description": "Complete program configuration combining global and specific settings"
+        }
+    }
+}

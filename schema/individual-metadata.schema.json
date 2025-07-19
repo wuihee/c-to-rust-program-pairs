@@ -8,7 +8,7 @@
             "type": "array",
             "description": "Array of standalone program pair configurations",
             "items": {
-                "$ref": "../entities/program-pair.schema.json#/definitions/individual_program_pair"
+                "$ref": "./pair.schema.json#/definitions/individual_program_pair"
             }
         }
     },
