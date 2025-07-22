@@ -15,12 +15,16 @@
             "test_commands": [
                 "make test"
             ],
-            "dependencies": [
-                "autoconf",
-                "automake",
-                "libtool",
-                "gettext"
-            ]
+            "dependencies": {
+                "linux": [],
+                "mac": [
+                    "autoconf",
+                    "automake",
+                    "libtool",
+                    "gettext"
+                ],
+                "windows": []
+            }
         },
         "rust_program": {
             "documentation_url": "",
@@ -31,9 +35,17 @@
             "test_commands": [
                 "cargo test"
             ],
-            "dependencies": [
-                "rust"
-            ]
+            "dependencies": {
+                "linux": [
+                    "rust"
+                ],
+                "mac": [
+                    "rust"
+                ],
+                "windows": [
+                    "rust"
+                ]
+            }
         }
     },
     "pairs": [

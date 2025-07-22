@@ -1,7 +1,7 @@
 use super::schema::{Features, Language, Metadata, Program, ProgramPair, Translation};
 use super::validator;
 use serde::{Deserialize, Serialize};
-use std::{error::Error, fs};
+use std::{collections::HashMap, error::Error, fs};
 
 // Schema for project metadata files.
 #[derive(Debug, Serialize, Deserialize)]
@@ -28,7 +28,7 @@ struct ProjectGlobalProgram {
     repository_url: String,
     build_commands: Vec<String>,
     test_commands: Vec<String>,
-    dependencies: Vec<String>,
+    dependencies: HashMap<String, Vec<String>>,
 }
 
 // Specific information for each individual program pair.
@@ -86,7 +86,7 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
         .collect();
 
     let metadata = Metadata { pairs };
-    let _ = validator::validate(&metadata, "./schema/main/project-pairs.schema.json")?;
+    let _ = validator::validate(&metadata)?;
 
     Ok(metadata)
 }

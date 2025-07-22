@@ -1,7 +1,7 @@
 use super::schema::{Features, Language, Metadata, Program, ProgramPair, Translation};
 use super::validator;
 use serde::{Deserialize, Serialize};
-use std::{error::Error, fs};
+use std::{collections::HashMap, error::Error, fs};
 
 // Schema for individual metadata files.
 #[derive(Debug, Serialize, Deserialize)]
@@ -28,7 +28,7 @@ struct IndividualProgram {
     repository_url: String,
     build_commands: Vec<String>,
     test_commands: Vec<String>,
-    dependencies: Vec<String>,
+    dependencies: HashMap<String, Vec<String>>,
     source_paths: Vec<String>,
     executable_paths: Vec<String>,
 }
@@ -71,7 +71,7 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
         .collect();
 
     let metadata = Metadata { pairs };
-    let _ = validator::validate(&metadata, "./schema/main/individual-pairs.schema.json");
+    let _ = validator::validate(&metadata);
 
     Ok(metadata)
 }

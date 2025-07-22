@@ -17,12 +17,16 @@
                 "test_commands": [
                     "make check"
                 ],
-                "dependencies": [
-                    "autoconf",
-                    "automake",
-                    "libtool",
-                    "gettext"
-                ],
+                "dependencies": {
+                    "linux": [],
+                    "mac": [
+                        "autoconf",
+                        "automake",
+                        "libtool",
+                        "gettext"
+                    ],
+                    "windows": []
+                },
                 "source_paths": [
                     "src/ls.c",
                     "src/ls.h"
@@ -40,9 +44,17 @@
                 "test_commands": [
                     "cargo test"
                 ],
-                "dependencies": [
-                    "rust"
-                ],
+                "dependencies": {
+                    "linux": [
+                        "rust"
+                    ],
+                    "mac": [
+                        "rust"
+                    ],
+                    "windows": [
+                        "rust"
+                    ]
+                },
                 "source_paths": [
                     "/"
                 ],
@@ -68,12 +80,16 @@
                 "test_commands": [
                     "make check"
                 ],
-                "dependencies": [
-                    "autoconf",
-                    "automake",
-                    "libtool",
-                    "gettext"
-                ],
+                "dependencies": {
+                    "linux": [],
+                    "mac": [
+                        "autoconf",
+                        "automake",
+                        "libtool",
+                        "gettext"
+                    ],
+                    "windows": []
+                },
                 "source_paths": [
                     "src/cat.c"
                 ],
@@ -90,9 +106,17 @@
                 "test_commands": [
                     "cargo test"
                 ],
-                "dependencies": [
-                    "rust"
-                ],
+                "dependencies": {
+                    "linux": [
+                        "rust"
+                    ],
+                    "mac": [
+                        "rust"
+                    ],
+                    "windows": [
+                        "rust"
+                    ]
+                },
                 "source_paths": [
                     "/"
                 ],
@@ -118,12 +142,16 @@
                 "test_commands": [
                     "make check"
                 ],
-                "dependencies": [
-                    "autoconf",
-                    "automake",
-                    "libtool",
-                    "gettext"
-                ],
+                "dependencies": {
+                    "linux": [],
+                    "mac": [
+                        "autoconf",
+                        "automake",
+                        "libtool",
+                        "gettext"
+                    ],
+                    "windows": []
+                },
                 "source_paths": [
                     "/"
                 ],
@@ -140,9 +168,17 @@
                 "test_commands": [
                     "cargo test"
                 ],
-                "dependencies": [
-                    "rust"
-                ],
+                "dependencies": {
+                    "linux": [
+                        "rust"
+                    ],
+                    "mac": [
+                        "rust"
+                    ],
+                    "windows": [
+                        "rust"
+                    ]
+                },
                 "source_paths": [
                     "/"
                 ],
@@ -168,12 +204,16 @@
                 "test_commands": [
                     "make check"
                 ],
-                "dependencies": [
-                    "autoconf",
-                    "automake",
-                    "libtool",
-                    "gettext"
-                ],
+                "dependencies": {
+                    "linux": [],
+                    "mac": [
+                        "autoconf",
+                        "automake",
+                        "libtool",
+                        "gettext"
+                    ],
+                    "windows": []
+                },
                 "source_paths": [
                     "find/find.c"
                 ],
@@ -190,9 +230,17 @@
                 "test_commands": [
                     "cargo test"
                 ],
-                "dependencies": [
-                    "rust"
-                ],
+                "dependencies": {
+                    "linux": [
+                        "rust"
+                    ],
+                    "mac": [
+                        "rust"
+                    ],
+                    "windows": [
+                        "rust"
+                    ]
+                },
                 "source_paths": [
                     "/"
                 ],
