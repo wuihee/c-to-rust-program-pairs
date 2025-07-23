@@ -1,0 +1,24 @@
+project:
+  name: diffutils
+  description: Rust implementation of diffutils tools.
+  description_url: https://github.com/uutils/diffutils/blob/main/README.md
+  relationship_type: rewrite
+  c_project:
+    project_url: https://git.savannah.gnu.org/git/diffutils.git
+  rust_project:
+    project_url: https://github.com/uutils/diffutils
+
+pairs:
+  - name: diff
+    description: Show differences between two files.
+    c_program:
+      path: src/diff.c
+    rust_program:
+      path: src/diff.rs
+
+  - name: cmp
+    description: Show the offsets and line numbers where two files differ.
+    c_program:
+      path: src/cmp.c
+    rust_program:
+      path: src/cmp.rs

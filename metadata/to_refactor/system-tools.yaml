@@ -1,0 +1,68 @@
+pairs:
+  - name: eza
+    description: A modern alternative to ls.
+    description_url: https://github.com/eza-community/eza/blob/main/README.md
+    translation: manual
+    features: superset
+    c_project:
+      url: https://github.com/coreutils/coreutils
+      version: 
+      setup:
+        - ./bootstrap
+      build:
+        - ./configure
+        - make
+      test:
+        - make check
+      dependencies:
+        - autoconf
+        - automake
+        - libtool
+        - gettext
+      source: src/ls.c
+      executable: src/ls
+    rust_project:
+      url: https://github.com/eza-community/eza
+      version:
+      setup:
+      build:
+        - cargo build
+      test:
+        - cargo test
+      dependencies:
+        - rust
+      source: /
+      executable: target/release/eza
+
+  - name: bat
+    description: A cat(1) clone with wings.
+    description_url: https://github.com/sharkdp/bat/blob/master/README.md
+    relationship_type: replacement
+    c_program:
+      url: https://github.com/coreutils/coreutils
+      path: src/cat.c
+    rust_program:
+      url: https://github.com/eza-community/eza
+      path:
+
+  - name: ripgrep
+    description: ripgrep recursively searches directories for a regex pattern while respecting your gitignore.
+    description_url: https://github.com/BurntSushi/ripgrep/blob/master/README.md
+    relationship_type: replacement
+    c_program:
+      url: https://git.savannah.gnu.org/git/grep.git
+      path: 
+    rust_program:
+      url: https://github.com/BurntSushi/ripgrep
+      path:
+
+  - name: fd
+    description: A simple, fast and user-friendly alternative to 'find'.
+    description_url: https://github.com/sharkdp/fd/blob/master/README.md
+    relationship_type: replacement
+    c_program:
+      url: https://ftp.gnu.org/gnu/findutils/
+      path: find/find.c
+    rust_program:
+      url: https://github.com/sharkdp/fd
+      path:
