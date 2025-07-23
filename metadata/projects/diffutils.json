@@ -5,7 +5,7 @@
         "translation_tool": "",
         "feature_relationship": "equivalent",
         "c_program": {
-            "documentation_url": "",
+            "documentation_url": "https://www.gnu.org/software/diffutils/",
             "repository_url": "https://git.savannah.gnu.org/git/diffutils.git",
             "build_commands": [
                 "./bootstrap",
@@ -27,7 +27,7 @@
             }
         },
         "rust_program": {
-            "documentation_url": "",
+            "documentation_url": "https://github.com/uutils/diffutils/blob/main/README.md",
             "repository_url": "https://github.com/uutils/diffutils",
             "build_commands": [
                 "cargo build --release"
