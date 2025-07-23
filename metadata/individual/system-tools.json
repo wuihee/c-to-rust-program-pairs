@@ -7,7 +7,7 @@
             "translation_tool": "",
             "feature_relationship": "superset",
             "c_program": {
-                "documentation_url": "",
+                "documentation_url": "https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html",
                 "repository_url": "https://github.com/coreutils/coreutils",
                 "build_commands": [
                     "./bootstrap",
@@ -70,7 +70,7 @@
             "translation_tool": "",
             "feature_relationship": "superset",
             "c_program": {
-                "documentation_url": "",
+                "documentation_url": "https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html",
                 "repository_url": "https://github.com/coreutils/coreutils",
                 "build_commands": [
                     "./bootstrap",
@@ -132,7 +132,7 @@
             "translation_tool": "",
             "feature_relationship": "superset",
             "c_program": {
-                "documentation_url": "",
+                "documentation_url": "https://man7.org/linux/man-pages/man1/grep.1.html",
                 "repository_url": "https://git.savannah.gnu.org/git/grep.git",
                 "build_commands": [
                     "./bootstrap",
@@ -194,7 +194,7 @@
             "translation_tool": "",
             "feature_relationship": "superset",
             "c_program": {
-                "documentation_url": "",
+                "documentation_url": "https://www.gnu.org/software/findutils/manual/html_mono/find.html",
                 "repository_url": "https://ftp.gnu.org/gnu/findutils/",
                 "build_commands": [
                     "./bootstrap",

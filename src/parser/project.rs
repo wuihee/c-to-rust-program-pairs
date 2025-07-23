@@ -1,7 +1,9 @@
 use super::schema::{Features, Language, Metadata, Program, ProgramPair, Translation};
-use super::validator;
+use jsonschema::validator_for;
 use serde::{Deserialize, Serialize};
+use serde_json::Value;
 use std::{collections::HashMap, error::Error, fs};
+const SCHEMA_PATH: &str = "./metadata/metadata.schema.json";
 
 // Schema for project metadata files.
 #[derive(Debug, Serialize, Deserialize)]
@@ -51,8 +53,19 @@ struct ProjectProgram {
 pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
     let raw_metadata = fs::read_to_string(path)?;
     let project_metadata: ProjectMetadata = serde_json::from_str(&raw_metadata)?;
-    let global_metadata = project_metadata.project_information;
 
+    // Validate metadata file with our JSON schema.
+    let schema_str = fs::read_to_string(SCHEMA_PATH)?;
+    let schema: Value = serde_json::from_str(&schema_str)?;
+    let validator = validator_for(&schema)?;
+    let project_metadata_json = serde_json::to_value(&project_metadata)?;
+    match validator.validate(&project_metadata_json) {
+        Ok(_) => println!("Successfully parsed :)"),
+        Err(_) => panic!("Failed to parse :("),
+    }
+
+    // Parse metadata into our program-pair data structure.
+    let global_metadata = project_metadata.project_information;
     let pairs: Vec<ProgramPair> = project_metadata
         .pairs
         .into_iter()
@@ -85,8 +98,5 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
         })
         .collect();
 
-    let metadata = Metadata { pairs };
-    let _ = validator::validate(&metadata)?;
-
-    Ok(metadata)
+    Ok(Metadata { pairs })
 }

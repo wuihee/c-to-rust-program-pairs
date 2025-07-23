@@ -111,8 +111,7 @@
             "required": [
                 "source_paths",
                 "executable_paths"
-            ],
-            "additionalProperties": false
+            ]
         },
         "project_global_program": {
             "type": "object",
@@ -140,8 +139,7 @@
                 "build_commands",
                 "test_commands",
                 "dependencies"
-            ],
-            "additionalProperties": false
+            ]
         },
         "individual_program": {
             "allOf": [
@@ -152,8 +150,7 @@
                     "$ref": "#/definitions/project_global_program"
                 }
             ],
-            "description": "Complete program configuration combining global and specific settings",
-            "additionalProperties": false
+            "description": "Complete program configuration combining global and specific settings"
         },
         "individual_program_pair": {
             "type": "object",
@@ -186,8 +183,7 @@
                 "program_description",
                 "c_program",
                 "rust_program"
-            ],
-            "additionalProperties": false
+            ]
         },
         "project_program_pair": {
             "type": "object",
@@ -211,8 +207,7 @@
                 "program_description",
                 "c_program",
                 "rust_program"
-            ],
-            "additionalProperties": false
+            ]
         }
     },
     "oneOf": [
@@ -231,8 +226,7 @@
             },
             "required": [
                 "pairs"
-            ],
-            "additionalProperties": false
+            ]
         },
         {
             "title": "Project Pairs Metadata",
@@ -267,8 +261,7 @@
                         "translation_method",
                         "c_program",
                         "rust_program"
-                    ],
-                    "additionalProperties": false
+                    ]
                 },
                 "pairs": {
                     "type": "array",
@@ -281,8 +274,7 @@
             "required": [
                 "project_information",
                 "pairs"
-            ],
-            "additionalProperties": false
+            ]
         }
     ]
 }

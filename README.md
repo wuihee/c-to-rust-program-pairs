@@ -160,3 +160,4 @@ Each C or Rust program have different configuration options, specified under the
 ## Resources
 
 - [Awesome Rust](https://github.com/rust-unofficial/awesome-rust): Contains a list of awesome Rust projects - many of which might be translated from C projects.
+- [JSON Schema Validator](https://www.jsonschemavalidator.net/): Used to validate JSON schemas.
