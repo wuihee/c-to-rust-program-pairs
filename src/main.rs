@@ -1,13 +1,30 @@
-mod parser;
+pub mod parser;
 
-use parser::{individual, project};
+#[cfg(test)]
+mod tests {
+    use super::parser::{individual, project};
 
-fn main() {
-    // Tests to show that we can parse and extract consistent data structures from individual and project metadata files.
-    let project_metadata = project::parse("./metadata/projects/diffutils.json").expect("Failed");
-    println!("{:?}", project_metadata);
+    // Tests that a project-metadata file can be successfully parsed.
+    #[test]
+    fn test_parse_project() {
+        let result = project::parse("./metadata/projects/diffutils.json");
+        assert!(
+            result.is_ok(),
+            "Failed to parse project metadata: {:?}",
+            result.err()
+        );
+    }
 
-    let individual_metadata =
-        individual::parse("./metadata/individual/system-tools.json").expect("Failed");
-    println!("{:?}", individual_metadata);
+    // Tests that an individual-metadata file can be successfully parsed.
+    #[test]
+    fn test_parse_individual() {
+        let result = individual::parse("./metadata/individual/system-tools.json");
+        assert!(
+            result.is_ok(),
+            "Failed to parse individual metadata: {:?}",
+            result.err()
+        );
+    }
 }
+
+fn main() {}

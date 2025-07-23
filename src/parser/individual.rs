@@ -4,8 +4,6 @@ use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::{collections::HashMap, error::Error, fs};
 
-const SCHEMA_PATH: &str = "./metadata/metadata.schema.json";
-
 // Schema for individual metadata files.
 #[derive(Debug, Serialize, Deserialize)]
 struct IndividualMetadata {
@@ -42,11 +40,11 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
     let individual_metadata: IndividualMetadata = serde_json::from_str(&raw_metadata)?;
 
     // Validate metadata file with our JSON schema.
-    let schema_str = fs::read_to_string(SCHEMA_PATH)?;
+    let schema_str = fs::read_to_string("./metadata/metadata.schema.json")?;
     let schema: Value = serde_json::from_str(&schema_str)?;
     let validator = validator_for(&schema)?;
-    let individual_metadata_json = serde_json::to_value(&individual_metadata)?;
-    match validator.validate(&individual_metadata_json) {
+    let data = serde_json::to_value(&individual_metadata)?;
+    match validator.validate(&data) {
         Ok(_) => println!("Successfully parsed :)"),
         Err(_) => panic!("Failed to parse :("),
     }
