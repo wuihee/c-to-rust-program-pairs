@@ -3,6 +3,7 @@ use jsonschema::validator_for;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::{collections::HashMap, error::Error, fs};
+
 const SCHEMA_PATH: &str = "./metadata/metadata.schema.json";
 
 // Schema for project metadata files.
