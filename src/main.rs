@@ -1,3 +1,4 @@
+mod corpus;
 pub mod parser;
 
 #[cfg(test)]
@@ -27,4 +28,13 @@ mod tests {
     }
 }
 
-fn main() {}
+fn main() {
+    // Testing the clone functionality
+    match parser::project::parse("./metadata/projects/diffutils.json") {
+        Ok(metadata) => {
+            let pair = &metadata.pairs[0];
+            corpus::clone(&pair);
+        }
+        Err(_) => println!("Failed to parse!"),
+    };
+}
