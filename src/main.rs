@@ -1,3 +1,4 @@
+mod paths;
 mod corpus;
 pub mod parser;
 

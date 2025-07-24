@@ -1,4 +1,5 @@
 use super::schema::{Features, Language, Metadata, Program, ProgramPair, Translation};
+use crate::paths::METADATA_SCHEMA_FILE;
 use jsonschema::validator_for;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
@@ -50,7 +51,7 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
     let project_metadata: ProjectMetadata = serde_json::from_str(&raw_metadata)?;
 
     // Validate metadata file with our JSON schema.
-    let schema_str = fs::read_to_string("./metadata/metadata.schema.json")?;
+    let schema_str = fs::read_to_string(METADATA_SCHEMA_FILE)?;
     let schema: Value = serde_json::from_str(&schema_str)?;
     let validator = validator_for(&schema)?;
     let project_metadata_json = serde_json::to_value(&project_metadata)?;
