@@ -117,13 +117,28 @@ Our schema consists of many fields which specify individual properties or attrib
 
 Each C or Rust program have different configuration options, specified under the `c_program` or `rust_program` fields. Note that *project metadata* files have two program configurations. The first is the *global program configuration*, specified as the `project_global_program` field in our schema, which specifies fields that apply to every program pair in the project. This includes fields like `repository_url`, `documentation_url`, `build_commands`, `test_commands`, and `dependencies`. The next *program configuration* is listed as `project_program` in our schema and only applies to individual program pairs, containing the `source_paths` and `executable_paths` fields which are unique to each program.
 
-## CLI Specification
+## Corpus Tool
+
+### Specification
 
 1. Create a folder with the name of the program-pair.
 2. Clone the C repository into a temporary directory, but check if this has already been done.
 3. Copy the C program from the cloned repository into our folder.
 4. Clone the Rust repository into a temporary directory, but check if this has already been done.
 5. Copy the Rust program from the cloned repository into our folder.
+
+### Cloning
+
+Given a `ProgramPair`:
+
+1. Clone both C and Rust repos into `/programs/temp`.
+2. Create `/programs/<project name>`.
+3. Move the C source files into `/programs/<project name>/c_project`, and vice-versa for Rust source files.
+4. Delete files in `/programs/temp`.
+
+#### Future Features
+
+- `/programs/temp` can work as a cache.
 
 ## Resources
 
