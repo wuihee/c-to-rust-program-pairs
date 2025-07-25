@@ -45,44 +45,6 @@
             ],
             "description": "Feature relationship between C and Rust implementations"
         },
-        "dependencies": {
-            "type": "object",
-            "description": "Build dependencies for each operating system",
-            "properties": {
-                "linux": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "mac": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "windows": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "build_commands": {
-            "type": "array",
-            "description": "Commands to build the program",
-            "items": {
-                "type": "string"
-            }
-        },
-        "test_commands": {
-            "type": "array",
-            "description": "Commands to test the program",
-            "items": {
-                "type": "string"
-            }
-        },
         "source_paths": {
             "type": "array",
             "description": "Paths to source files",
@@ -122,23 +84,11 @@
                 },
                 "repository_url": {
                     "$ref": "#/definitions/repository_url"
-                },
-                "build_commands": {
-                    "$ref": "#/definitions/build_commands"
-                },
-                "test_commands": {
-                    "$ref": "#/definitions/test_commands"
-                },
-                "dependencies": {
-                    "$ref": "#/definitions/dependencies"
                 }
             },
             "required": [
                 "documentation_url",
-                "repository_url",
-                "build_commands",
-                "test_commands",
-                "dependencies"
+                "repository_url"
             ]
         },
         "individual_program": {

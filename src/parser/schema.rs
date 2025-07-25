@@ -1,5 +1,4 @@
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 
 // Our final, metadata data structure that we extract from individual /
 // project metadata files.
@@ -26,9 +25,6 @@ pub struct Program {
     pub language: Language,
     pub documentation_url: String,
     pub repository_url: String,
-    pub build_commands: Vec<String>,
-    pub test_commands: Vec<String>,
-    pub dependencies: HashMap<String, Vec<String>>,
     pub source_paths: Vec<String>,
     pub executable_paths: Vec<String>,
 }

@@ -2,7 +2,7 @@ use super::schema::{Features, Language, Metadata, Program, ProgramPair, Translat
 use jsonschema::validator_for;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::{collections::HashMap, error::Error, fs};
+use std::{error::Error, fs};
 
 // Schema for project metadata files.
 #[derive(Debug, Serialize, Deserialize)]
@@ -27,9 +27,6 @@ struct ProjectInformation {
 struct ProjectGlobalProgram {
     documentation_url: String,
     repository_url: String,
-    build_commands: Vec<String>,
-    test_commands: Vec<String>,
-    dependencies: HashMap<String, Vec<String>>,
 }
 
 // Specific information for each individual program pair.
@@ -78,9 +75,6 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
                 language: Language::C,
                 documentation_url: global_metadata.c_program.documentation_url.clone(),
                 repository_url: global_metadata.c_program.repository_url.clone(),
-                build_commands: global_metadata.c_program.build_commands.clone(),
-                test_commands: global_metadata.c_program.test_commands.clone(),
-                dependencies: global_metadata.c_program.dependencies.clone(),
                 source_paths: pair.c_program.source_paths,
                 executable_paths: pair.c_program.executable_paths,
             },
@@ -88,9 +82,6 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
                 language: Language::Rust,
                 documentation_url: global_metadata.rust_program.documentation_url.clone(),
                 repository_url: global_metadata.rust_program.repository_url.clone(),
-                build_commands: global_metadata.rust_program.build_commands.clone(),
-                test_commands: global_metadata.rust_program.test_commands.clone(),
-                dependencies: global_metadata.rust_program.dependencies.clone(),
                 source_paths: pair.rust_program.source_paths,
                 executable_paths: pair.rust_program.executable_paths,
             },
