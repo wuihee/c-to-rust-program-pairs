@@ -2,7 +2,7 @@ use super::schema::{Features, Language, Metadata, Program, ProgramPair, Translat
 use jsonschema::validator_for;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::{collections::HashMap, error::Error, fs};
+use std::{error::Error, fs};
 
 // Schema for individual metadata files.
 #[derive(Debug, Serialize, Deserialize)]
@@ -27,9 +27,6 @@ struct IndividualProgramPair {
 struct IndividualProgram {
     documentation_url: String,
     repository_url: String,
-    build_commands: Vec<String>,
-    test_commands: Vec<String>,
-    dependencies: HashMap<String, Vec<String>>,
     source_paths: Vec<String>,
     executable_paths: Vec<String>,
 }
@@ -63,9 +60,6 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
                 language: Language::C,
                 documentation_url: pair.c_program.documentation_url,
                 repository_url: pair.c_program.repository_url,
-                build_commands: pair.c_program.build_commands,
-                test_commands: pair.c_program.test_commands,
-                dependencies: pair.c_program.dependencies,
                 source_paths: pair.c_program.source_paths,
                 executable_paths: pair.c_program.executable_paths,
             },
@@ -73,9 +67,6 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
                 language: Language::Rust,
                 documentation_url: pair.rust_program.documentation_url,
                 repository_url: pair.rust_program.repository_url,
-                build_commands: pair.rust_program.build_commands,
-                test_commands: pair.rust_program.test_commands,
-                dependencies: pair.rust_program.dependencies,
                 source_paths: pair.rust_program.source_paths,
                 executable_paths: pair.rust_program.executable_paths,
             },

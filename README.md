@@ -36,26 +36,12 @@ We have two metadata schema types - an *individual* or *project* schema. In an i
       "c_program": {
         "documentation_url": "https://example.com/c-grep",
         "repository_url": "https://github.com/user/c-grep",
-        "build_commands": ["gcc -o grep grep.c"],
-        "test_commands": ["./run-tests.sh"],
-        "dependencies": {
-          "linux": ["gcc", "make"],
-          "mac": ["clang"],
-          "windows": ["msvc"]
-        },
         "source_paths": ["grep.c", "utils.h"],
         "executable_paths": ["./grep"]
       },
       "rust_program": {
         "documentation_url": "https://docs.rs/simple-grep",
         "repository_url": "https://github.com/user/rust-grep",
-        "build_commands": ["cargo build --release"],
-        "test_commands": ["cargo test"],
-        "dependencies": {
-          "linux": ["build-essential"],
-          "mac": ["xcode"],
-          "windows": ["msvc"]
-        },
         "source_paths": ["src/main.rs", "src/lib.rs"],
         "executable_paths": ["target/release/simple-grep"]
       }
@@ -76,24 +62,10 @@ In a project metadata file, we have a project containing many C-Rust programs.
     "c_program": {
       "documentation_url": "https://www.gnu.org/software/coreutils/",
       "repository_url": "https://github.com/coreutils/coreutils",
-      "build_commands": ["./configure", "make"],
-      "test_commands": ["make check"],
-      "dependencies": {
-        "linux": ["gcc", "autotools"],
-        "mac": ["clang", "autotools"],
-        "windows": ["msys2", "gcc"]
-      }
     },
     "rust_program": {
       "documentation_url": "https://github.com/uutils/coreutils",
       "repository_url": "https://github.com/uutils/coreutils",
-      "build_commands": ["cargo build --release"],
-      "test_commands": ["cargo test", "./util/run-gnu-test.sh"],
-      "dependencies": {
-        "linux": ["rustc", "cargo"],
-        "mac": ["rustc", "cargo"],
-        "windows": ["rustc", "cargo"]
-      }
     }
   },
   "pairs": [
@@ -126,9 +98,6 @@ Our schema consists of many fields which specify individual properties or attrib
 | `translation_method` | string | Translation process type | `"manual"`, `"semi-automatic"`, `"automatic"` |
 | `translation_tool` | string | Tool used for translation | `"c2rust"`, `"manual-rewrite"` |
 | `feature_relationship` | string | Feature comparison with C version | `"superset"`, `"subset"`, `"equivalent"`, `"overlapping"` |
-| `dependencies` | object | Platform-specific build dependencies | `{"linux": ["gcc"], "mac": ["clang"], "windows": ["msvc"]}` |
-| `build_commands` | array | Commands to build the program | `["cargo build", "make install"]` |
-| `test_commands` | array | Commands to run tests | `["cargo test", "./integration-tests.sh"]` |
 | `source_paths` | array | Paths to source files/directories | `["src/main.rs", "src/lib.rs"]` |
 | `executable_paths` | array | Paths to compiled executables | `["target/release/program-name"]` |
 
