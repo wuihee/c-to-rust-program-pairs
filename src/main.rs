@@ -1,6 +1,6 @@
-mod paths;
 mod corpus;
 pub mod parser;
+mod paths;
 
 #[cfg(test)]
 mod tests {
@@ -34,7 +34,10 @@ fn main() {
     match parser::project::parse("./metadata/projects/diffutils.json") {
         Ok(metadata) => {
             let pair = &metadata.pairs[0];
-            corpus::clone(&pair);
+            match corpus::download_program_pair(&pair) {
+                Ok(_) => println!("Successfully copied files!"),
+                Err(error) => println!("Failed to copy files: {}", error),
+            };
         }
         Err(_) => println!("Failed to parse!"),
     };
