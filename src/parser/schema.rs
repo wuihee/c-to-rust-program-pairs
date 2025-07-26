@@ -26,7 +26,6 @@ pub struct Program {
     pub documentation_url: String,
     pub repository_url: String,
     pub source_paths: Vec<String>,
-    pub executable_paths: Vec<String>,
 }
 
 // Specifies the method of translating from C to Rust.

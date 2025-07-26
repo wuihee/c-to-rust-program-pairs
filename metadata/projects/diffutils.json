@@ -21,17 +21,11 @@
                 "source_paths": [
                     "src/diff.c",
                     "src/diff.h"
-                ],
-                "executable_paths": [
-                    "src/diff"
                 ]
             },
             "rust_program": {
                 "source_paths": [
                     "src/diff.rs"
-                ],
-                "executable_paths": [
-                    "/target/release/arch"
                 ]
             }
         },
@@ -42,17 +36,11 @@
                 "source_paths": [
                     "src/cmp.c",
                     "src/cmp.h"
-                ],
-                "executable_paths": [
-                    "src/cmp"
                 ]
             },
             "rust_program": {
                 "source_paths": [
                     "src/diff.rs"
-                ],
-                "executable_paths": [
-                    "/target/release/arch"
                 ]
             }
         }

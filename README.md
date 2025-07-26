@@ -99,7 +99,6 @@ Our schema consists of many fields which specify individual properties or attrib
 | `translation_tool` | string | Tool used for translation | `"c2rust"`, `"manual-rewrite"` |
 | `feature_relationship` | string | Feature comparison with C version | `"superset"`, `"subset"`, `"equivalent"`, `"overlapping"` |
 | `source_paths` | array | Paths to source files/directories | `["src/main.rs", "src/lib.rs"]` |
-| `executable_paths` | array | Paths to compiled executables | `["target/release/program-name"]` |
 
 **Translation Method Values:**
 

@@ -52,27 +52,16 @@
                 "type": "string"
             }
         },
-        "executable_paths": {
-            "type": "array",
-            "description": "Path to compiled executable",
-            "items": {
-                "type": "string"
-            }
-        },
         "project_program": {
             "type": "object",
             "description": "Program-specific configuration (per individual pair)",
             "properties": {
                 "source_paths": {
                     "$ref": "#/definitions/source_paths"
-                },
-                "executable_paths": {
-                    "$ref": "#/definitions/executable_paths"
                 }
             },
             "required": [
-                "source_paths",
-                "executable_paths"
+                "source_paths"
             ]
         },
         "project_global_program": {

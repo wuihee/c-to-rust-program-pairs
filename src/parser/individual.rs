@@ -28,7 +28,6 @@ struct IndividualProgram {
     documentation_url: String,
     repository_url: String,
     source_paths: Vec<String>,
-    executable_paths: Vec<String>,
 }
 
 // Parses an individual metadata file into a schema::Metadata object.
@@ -40,10 +39,10 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
     let schema_str = fs::read_to_string("./metadata/metadata.schema.json")?;
     let schema: Value = serde_json::from_str(&schema_str)?;
     let validator = validator_for(&schema)?;
-    let data = serde_json::to_value(&individual_metadata)?;
-    match validator.validate(&data) {
-        Ok(_) => println!("Successfully parsed :)"),
-        Err(_) => panic!("Failed to parse :("),
+    let individual_metadata_json = serde_json::to_value(&individual_metadata)?;
+    match validator.validate(&individual_metadata_json) {
+        Ok(_) => println!("Successfully parsed!"),
+        Err(_) => panic!("Failed to parse."),
     }
 
     // Parse metadata into our program-pair data structure.
@@ -61,14 +60,12 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
                 documentation_url: pair.c_program.documentation_url,
                 repository_url: pair.c_program.repository_url,
                 source_paths: pair.c_program.source_paths,
-                executable_paths: pair.c_program.executable_paths,
             },
             rust_program: Program {
                 language: Language::Rust,
                 documentation_url: pair.rust_program.documentation_url,
                 repository_url: pair.rust_program.repository_url,
                 source_paths: pair.rust_program.source_paths,
-                executable_paths: pair.rust_program.executable_paths,
             },
         })
         .collect();
