@@ -42,7 +42,6 @@ struct ProjectProgramPair {
 #[derive(Debug, Serialize, Deserialize)]
 struct ProjectProgram {
     source_paths: Vec<String>,
-    executable_paths: Vec<String>,
 }
 
 // Parses a project metadata file into a schema::Metadata object.
@@ -56,8 +55,8 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
     let validator = validator_for(&schema)?;
     let project_metadata_json = serde_json::to_value(&project_metadata)?;
     match validator.validate(&project_metadata_json) {
-        Ok(_) => println!("Successfully parsed :)"),
-        Err(_) => panic!("Failed to parse :("),
+        Ok(_) => println!("Successfully parsed!"),
+        Err(_) => panic!("Failed to parse."),
     }
 
     // Parse metadata into our program-pair data structure.
@@ -76,14 +75,12 @@ pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
                 documentation_url: global_metadata.c_program.documentation_url.clone(),
                 repository_url: global_metadata.c_program.repository_url.clone(),
                 source_paths: pair.c_program.source_paths,
-                executable_paths: pair.c_program.executable_paths,
             },
             rust_program: Program {
                 language: Language::Rust,
                 documentation_url: global_metadata.rust_program.documentation_url.clone(),
                 repository_url: global_metadata.rust_program.repository_url.clone(),
                 source_paths: pair.rust_program.source_paths,
-                executable_paths: pair.rust_program.executable_paths,
             },
         })
         .collect();

@@ -12,9 +12,6 @@
                 "source_paths": [
                     "src/ls.c",
                     "src/ls.h"
-                ],
-                "executable_paths": [
-                    "src/ls"
                 ]
             },
             "rust_program": {
@@ -22,9 +19,6 @@
                 "repository_url": "https://github.com/eza-community/eza",
                 "source_paths": [
                     "/"
-                ],
-                "executable_paths": [
-                    "target/release/eza"
                 ]
             }
         },
@@ -39,9 +33,6 @@
                 "repository_url": "https://github.com/coreutils/coreutils",
                 "source_paths": [
                     "src/cat.c"
-                ],
-                "executable_paths": [
-                    "src/cat"
                 ]
             },
             "rust_program": {
@@ -49,9 +40,6 @@
                 "repository_url": "https://github.com/sharkdp/bat",
                 "source_paths": [
                     "/"
-                ],
-                "executable_paths": [
-                    "target/release/bat"
                 ]
             }
         },
@@ -66,9 +54,6 @@
                 "repository_url": "https://git.savannah.gnu.org/git/grep.git",
                 "source_paths": [
                     "/"
-                ],
-                "executable_paths": [
-                    "grep"
                 ]
             },
             "rust_program": {
@@ -76,9 +61,6 @@
                 "repository_url": "https://github.com/BurntSushi/ripgrep",
                 "source_paths": [
                     "/"
-                ],
-                "executable_paths": [
-                    "target/release/rg"
                 ]
             }
         },
@@ -93,9 +75,6 @@
                 "repository_url": "https://ftp.gnu.org/gnu/findutils/",
                 "source_paths": [
                     "find/find.c"
-                ],
-                "executable_paths": [
-                    "find/find"
                 ]
             },
             "rust_program": {
@@ -103,9 +82,6 @@
                 "repository_url": "https://github.com/sharkdp/fd",
                 "source_paths": [
                     "/"
-                ],
-                "executable_paths": [
-                    "target/release/fd"
                 ]
             }
         }
