@@ -36,7 +36,7 @@ fn download_files(
     program_name: &str,
     program_directory: &Path,
     repository_url: &str,
-    files: &Vec<String>,
+    files: &[String],
 ) -> Result<(), Box<dyn Error>> {
     // Clone the repository.
     let temporary_directory = tempfile::tempdir()?;
@@ -47,8 +47,13 @@ fn download_files(
 
     // Copy the given files from the repository to the given directory.
     for file_path in files.iter() {
-        let file_name = Path::new(file_path).file_name().unwrap();
-        let source = repository.workdir().unwrap().join(&file_path);
+        let file_name = Path::new(file_path)
+            .file_name()
+            .ok_or("Invalid file path.")?;
+        let source = repository
+            .workdir()
+            .ok_or("Failed to find source file in repository.")?
+            .join(&file_path);
         let destination = program_directory.join(file_name);
         if !destination.exists() {
             fs::copy(source, destination)?;
