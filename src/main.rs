@@ -1,10 +1,10 @@
 mod corpus;
-pub mod parser;
+mod parser;
 mod paths;
 
 #[cfg(test)]
 mod tests {
-    use super::parser::{individual, project};
+    use crate::parser::{individual, project};
 
     // Tests that a project-metadata file can be successfully parsed.
     #[test]
@@ -29,16 +29,26 @@ mod tests {
     }
 }
 
+use parser::{individual, project};
+
 fn main() {
     // Testing the clone functionality
-    match parser::project::parse("./metadata/projects/diffutils.json") {
+    match individual::parse("./metadata/individual/system-tools.json") {
         Ok(metadata) => {
-            let pair = &metadata.pairs[0];
-            match corpus::download_program_pair(&pair) {
-                Ok(_) => println!("Successfully copied files!"),
+            match corpus::download_metadata(&metadata) {
+                Ok(_) => println!("Successfully downloaded files!"),
                 Err(error) => println!("Failed to copy files: {}", error),
             };
         }
-        Err(_) => println!("Failed to parse!"),
+        Err(error) => println!("Failed to parse: {error}"),
+    };
+    match project::parse("./metadata/project/diffutils.json") {
+        Ok(metadata) => {
+            match corpus::download_metadata(&metadata) {
+                Ok(_) => println!("Successfully downloaded files!"),
+                Err(error) => println!("Failed to copy files: {}", error),
+            };
+        }
+        Err(error) => println!("Failed to parse: {error}"),
     };
 }

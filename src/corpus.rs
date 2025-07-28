@@ -1,17 +1,37 @@
-use super::{parser::schema::ProgramPair, paths::PROGRAMS_DIRECTORY};
+use crate::{
+    parser::schema::{Metadata, ProgramPair},
+    paths::PROGRAMS_DIRECTORY,
+};
+
 use git2::{FetchOptions, Progress, RemoteCallbacks, build::RepoBuilder};
 use indicatif::{ProgressBar, ProgressStyle};
 use std::{error::Error, fs, path::Path};
 use tempfile;
 
+// Downloads all program-pairs in a given Metadata object.
+pub fn download_metadata(metadata: &Metadata) -> Result<(), Box<dyn Error>> {
+    for pair in metadata.pairs.iter() {
+        download_program_pair(pair)?;
+    }
+
+    Ok(())
+}
+
 // Downloads a program-pair into the ./programs directory.
 // The C source files will be downloaded to ./programs/<program_name>/c-program.
 // The Rust source files will be downloaded to ./programs/<program_name>/rust-program.
-pub fn download_program_pair(pair: &ProgramPair) -> Result<(), Box<dyn Error>> {
+fn download_program_pair(pair: &ProgramPair) -> Result<(), Box<dyn Error>> {
     let program_name = &pair.program_name;
     let base_program_path = Path::new(PROGRAMS_DIRECTORY).join(program_name);
     let c_program_path = base_program_path.join("c-program");
     let rust_program_path = base_program_path.join("rust-program");
+
+    // Don't clone repositories if directories already exist.
+    if base_program_path.exists() {
+        println!("{program_name} already exists!");
+        return Ok(());
+    }
+
     fs::create_dir_all(&c_program_path)?;
     fs::create_dir_all(&rust_program_path)?;
 
@@ -115,10 +135,34 @@ fn download_files(
             .join(&file_path);
         let destination = program_directory.join(file_name);
         if !destination.exists() {
-            fs::copy(source, destination)?;
+            if source.is_dir() {
+                copy_dir(&source, &destination)?;
+            } else {
+                fs::copy(source, destination)?;
+            }
         }
     }
 
     progress_bar.finish_with_message("Download completed!");
+    Ok(())
+}
+
+// Copy a directory recursively from source to destination.
+fn copy_dir(source: &Path, destination: &Path) -> Result<(), Box<dyn Error>> {
+    fs::create_dir_all(destination)?;
+
+    for entry in fs::read_dir(source)? {
+        let entry = entry?;
+        let file_type = entry.file_type()?;
+        let entry_source = entry.path();
+        let entry_destination = destination.join(entry.file_name());
+
+        if file_type.is_dir() {
+            copy_dir(&entry_source, &entry_destination)?;
+        } else {
+            fs::copy(&entry_source, &entry_destination)?;
+        }
+    }
+
     Ok(())
 }
