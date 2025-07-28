@@ -34,8 +34,7 @@
             "program_description": "Show the offsets and line numbers where two files differ.",
             "c_program": {
                 "source_paths": [
-                    "src/cmp.c",
-                    "src/cmp.h"
+                    "src/cmp.c"
                 ]
             },
             "rust_program": {

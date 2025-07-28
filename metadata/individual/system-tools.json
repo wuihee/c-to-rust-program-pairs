@@ -18,7 +18,7 @@
                 "documentation_url": "https://github.com/eza-community/eza/blob/main/README.md",
                 "repository_url": "https://github.com/eza-community/eza",
                 "source_paths": [
-                    "/"
+                    "src"
                 ]
             }
         },
@@ -39,7 +39,7 @@
                 "documentation_url": "https://github.com/sharkdp/bat/blob/master/README.md",
                 "repository_url": "https://github.com/sharkdp/bat",
                 "source_paths": [
-                    "/"
+                    "src"
                 ]
             }
         },
@@ -53,14 +53,14 @@
                 "documentation_url": "https://man7.org/linux/man-pages/man1/grep.1.html",
                 "repository_url": "https://git.savannah.gnu.org/git/grep.git",
                 "source_paths": [
-                    "/"
+                    "src"
                 ]
             },
             "rust_program": {
                 "documentation_url": "https://github.com/BurntSushi/ripgrep/blob/master/README.md",
                 "repository_url": "https://github.com/BurntSushi/ripgrep",
                 "source_paths": [
-                    "/"
+                    "src"
                 ]
             }
         },
@@ -81,7 +81,7 @@
                 "documentation_url": "https://github.com/sharkdp/fd/blob/master/README.md",
                 "repository_url": "https://github.com/sharkdp/fd",
                 "source_paths": [
-                    "/"
+                    "src"
                 ]
             }
         }
