@@ -43,12 +43,12 @@
             "feature_relationship": "superset",
             "c_program": {
                 "documentation_url": "https://www.gnu.org/software/findutils/manual/html_mono/find.html",
-                "repository_url": "https://ftp.gnu.org/gnu/findutils/",
-                "source_paths": ["find/find.c"]
+                "repository_url": "https://git.savannah.gnu.org/git/findutils.git",
+                "source_paths": ["find"]
             },
             "rust_program": {
                 "documentation_url": "https://github.com/sharkdp/fd/blob/master/README.md",
-                "repository_url": "https://github.com/sharkdp/fd",
+                "repository_url": "https://github.com/sharkdp/fd.git",
                 "source_paths": ["src"]
             }
         }
