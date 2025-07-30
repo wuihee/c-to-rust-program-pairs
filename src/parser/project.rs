@@ -1,9 +1,12 @@
-use super::schema::{Features, Language, Metadata, Program, ProgramPair, Translation};
-use crate::paths::METADATA_SCHEMA_FILE;
+use crate::{
+    parser::schema::{Features, Language, Metadata, Program, ProgramPair, Translation},
+    paths::METADATA_SCHEMA_FILE,
+};
+
 use jsonschema::validator_for;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::{error::Error, fs};
+use std::{error::Error, fs, path::Path};
 
 // Schema for project metadata files.
 #[derive(Debug, Serialize, Deserialize)]
@@ -46,7 +49,7 @@ struct ProjectProgram {
 }
 
 // Parses a project metadata file into a schema::Metadata object.
-pub fn parse(path: &str) -> Result<Metadata, Box<dyn Error>> {
+pub fn parse(path: &Path) -> Result<Metadata, Box<dyn Error>> {
     let raw_metadata = fs::read_to_string(path)?;
     let project_metadata: ProjectMetadata = serde_json::from_str(&raw_metadata)?;
 

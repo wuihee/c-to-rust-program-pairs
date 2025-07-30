@@ -127,7 +127,7 @@ fn download_files(
         }
     }
 
-    progress_bar.finish_with_message(format!("Successfully downloaded {}!", program_name));
+    progress_bar.finish_with_message(format!("Successfully downloaded {}!", repository_url));
     Ok(())
 }
 
