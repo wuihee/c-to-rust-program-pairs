@@ -127,19 +127,6 @@ Each C or Rust program have different configuration options, specified under the
 4. Clone the Rust repository into a temporary directory, but check if this has already been done.
 5. Copy the Rust program from the cloned repository into our folder.
 
-### Cloning
-
-Given a `ProgramPair`:
-
-1. Clone both C and Rust repos into `/programs/temp`.
-2. Create `/programs/<project name>`.
-3. Move the C source files into `/programs/<project name>/c_project`, and vice-versa for Rust source files.
-4. Delete files in `/programs/temp`.
-
-#### Future Features
-
-- `/programs/temp` can work as a cache.
-
 ## Resources
 
 - [Awesome Rust](https://github.com/rust-unofficial/awesome-rust): Contains a list of awesome Rust projects - many of which might be translated from C projects.
