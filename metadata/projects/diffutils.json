@@ -18,29 +18,20 @@
             "program_name": "diff",
             "program_description": "Show differences between two files.",
             "c_program": {
-                "source_paths": [
-                    "src/diff.c",
-                    "src/diff.h"
-                ]
+                "source_paths": ["src/diff.c", "src/diff.h"]
             },
             "rust_program": {
-                "source_paths": [
-                    "src/diff.rs"
-                ]
+                "source_paths": ["src/diff.rs"]
             }
         },
         {
             "program_name": "cmp",
             "program_description": "Show the offsets and line numbers where two files differ.",
             "c_program": {
-                "source_paths": [
-                    "src/cmp.c"
-                ]
+                "source_paths": ["src/cmp.c"]
             },
             "rust_program": {
-                "source_paths": [
-                    "src/diff.rs"
-                ]
+                "source_paths": ["src/diff.rs"]
             }
         }
     ]

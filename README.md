@@ -103,7 +103,7 @@ Our schema consists of many fields which specify individual properties or attrib
 **Translation Method Values:**
 
 - `manual` - Hand-written from scratch
-- `semi-automatic` - Mix of automated tools and manual work  
+- `semi-automatic` - Mix of automated tools and manual work
 - `automatic` - Primarily tool-generated
 
 **Feature Relationship Values:**
