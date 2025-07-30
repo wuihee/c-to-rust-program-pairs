@@ -112,15 +112,26 @@ fn download_files(
     // Clone only the latest commit to save time / space.
     fetch_options.depth(1);
 
-    // Clone the repository.
-    let temporary_directory = tempfile::tempdir()?;
-    let mut builder = RepoBuilder::new();
-    builder.fetch_options(fetch_options);
-
-    let repository = builder.clone(
-        &repository_url,
-        &temporary_directory.path().join(program_name),
-    )?;
+    // TODO: Clone in REPO_CACHE_DIRECTORY
+    //
+    let repository_path = Path::new(REPOSITORY_CACHE_DIRECTORY);
+    let repository_name =
+        get_repository_name(repository_url).ok_or("Failed to get repository name from URL.")?;
+    let repository = match Repository::open(repository_path.join(repository_name)) {
+        Some(repository) => repository,
+        Err(_) => {
+                    builder.fetch_options(fetch_options);
+                    builder.clone(repository_url, &repository_path)?
+        }
+    }
+    // let repository = match get_repository_name(repository_url) {
+    //     Some(repository_name) => Repository::open(repository_path.join(repository_name))?,
+    //     None => {
+    //         let mut builder = RepoBuilder::new();
+    //         builder.fetch_options(fetch_options);
+    //         builder.clone(repository_url, &repository_path)?
+    //     }
+    // };
 
     progress_bar.set_message("Copying files...");
     progress_bar.set_style(ProgressStyle::default_spinner());
