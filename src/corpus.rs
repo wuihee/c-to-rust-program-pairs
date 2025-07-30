@@ -9,12 +9,13 @@ use std::{error::Error, fs, path::Path};
 use tempfile;
 
 // Downloads all program-pairs in a given Metadata object.
-pub fn download_metadata(metadata: &Metadata) -> Result<(), Box<dyn Error>> {
+pub fn download_metadata(metadata: &Metadata) {
     for pair in metadata.pairs.iter() {
-        download_program_pair(pair)?;
+        match download_program_pair(pair) {
+            Ok(_) => {}
+            Err(error) => println!("Failed to download {}: {}", pair.program_name, error),
+        }
     }
-
-    Ok(())
 }
 
 // Downloads a program-pair into the ./programs directory.
@@ -143,7 +144,7 @@ fn download_files(
         }
     }
 
-    progress_bar.finish_with_message("Download completed!");
+    progress_bar.finish_with_message(format!("Successfully downloaded {}!", program_name));
     Ok(())
 }
 

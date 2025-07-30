@@ -33,22 +33,14 @@ use parser::{individual, project};
 
 fn main() {
     // Testing the clone functionality
+    println!("Downloading system-tools...");
     match individual::parse("./metadata/individual/system-tools.json") {
-        Ok(metadata) => {
-            match corpus::download_metadata(&metadata) {
-                Ok(_) => println!("Successfully downloaded files!"),
-                Err(error) => println!("Failed to copy files: {}", error),
-            };
-        }
+        Ok(metadata) => corpus::download_metadata(&metadata),
         Err(error) => println!("Failed to parse: {error}"),
     };
+    println!("Downloading diffutils...");
     match project::parse("./metadata/project/diffutils.json") {
-        Ok(metadata) => {
-            match corpus::download_metadata(&metadata) {
-                Ok(_) => println!("Successfully downloaded files!"),
-                Err(error) => println!("Failed to copy files: {}", error),
-            };
-        }
+        Ok(metadata) => corpus::download_metadata(&metadata),
         Err(error) => println!("Failed to parse: {error}"),
     };
 }
