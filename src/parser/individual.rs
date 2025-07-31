@@ -44,9 +44,9 @@ pub fn parse(path: &Path) -> Result<Metadata, Box<dyn Error>> {
     let schema: Value = serde_json::from_str(&schema_str)?;
     let validator = validator_for(&schema)?;
     let individual_metadata_json = serde_json::to_value(&individual_metadata)?;
-    match validator.validate(&individual_metadata_json) {
-        Ok(_) => println!("Successfully parsed metadata!"),
-        Err(error) => panic!("Failed to parse metadata: {error}"),
+
+    if let Err(error) = validator.validate(&individual_metadata_json) {
+        return Err(format!("Failed to validate metadata: {error}").into());
     }
 
     // Parse metadata into our program-pair data structure.
