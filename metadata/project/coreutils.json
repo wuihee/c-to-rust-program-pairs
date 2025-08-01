@@ -10,7 +10,7 @@
         },
         "rust_program": {
             "documentation_url": "https://github.com/uutils/coreutils/blob/main/README.md",
-            "repository_url": "https://github.com/uutils/coreutils/"
+            "repository_url": "https://github.com/uutils/coreutils.git"
         }
     },
     "pairs": [
@@ -18,7 +18,7 @@
             "program_name": "arch",
             "program_description": "Display machine architecture",
             "c_program": {
-                "source_paths": ["src/arch.c"]
+                "source_paths": ["src/coreutils-arch.c"]
             },
             "rust_program": {
                 "source_paths": ["src/uu/arch/src/arch.rs"]
@@ -28,7 +28,7 @@
             "program_name": "base32",
             "program_description": "Base32 encode/decode data",
             "c_program": {
-                "source_paths": ["src/base32.c"]
+                "source_paths": ["src/basenc.c"]
             },
             "rust_program": {
                 "source_paths": ["src/uu/base32/src/base32.rs"]
@@ -38,7 +38,7 @@
             "program_name": "base64",
             "program_description": "Base64 encode/decode data",
             "c_program": {
-                "source_paths": ["src/base64.c"]
+                "source_paths": ["src/basenc.c"]
             },
             "rust_program": {
                 "source_paths": ["src/uu/base64/src/base64.rs"]
@@ -88,7 +88,7 @@
             "program_name": "chgrp",
             "program_description": "Change group ownership of files",
             "c_program": {
-                "source_paths": ["src/chgrp.c"]
+                "source_paths": ["src/coreutils-chgrp.c"]
             },
             "rust_program": {
                 "source_paths": ["src/uu/chgrp/src/chgrp.rs"]
@@ -338,7 +338,7 @@
             "program_name": "hashsum",
             "program_description": "Compute and check hashes",
             "c_program": {
-                "source_paths": ["src/md5sum.c"]
+                "source_paths": ["src/digest.c"]
             },
             "rust_program": {
                 "source_paths": ["src/uu/hashsum/src/hashsum.rs"]
@@ -492,16 +492,6 @@
             },
             "rust_program": {
                 "source_paths": ["src/uu/mktemp/src/mktemp.rs"]
-            }
-        },
-        {
-            "program_name": "more",
-            "program_description": "Display output one screen at a time",
-            "c_program": {
-                "source_paths": ["src/more.c"]
-            },
-            "rust_program": {
-                "source_paths": ["src/uu/more/src/more.rs"]
             }
         },
         {

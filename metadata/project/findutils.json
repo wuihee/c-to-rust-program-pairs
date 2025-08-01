@@ -10,7 +10,7 @@
         },
         "rust_program": {
             "documentation_url": "https://github.com/uutils/findutils/blob/main/README.md",
-            "repository_url": "https://github.com/uutils/findutils"
+            "repository_url": "https://github.com/uutils/findutils.git"
         }
     },
     "pairs": [
@@ -21,7 +21,7 @@
                 "source_paths": ["find"]
             },
             "rust_program": {
-                "source_paths": ["src/uu/find/src/find.rs"]
+                "source_paths": ["src/find"]
             }
         },
         {
@@ -31,17 +31,7 @@
                 "source_paths": ["xargs/xargs.c"]
             },
             "rust_program": {
-                "source_paths": ["src/uu/xargs/src/xargs.rs"]
-            }
-        },
-        {
-            "program_name": "locate",
-            "program_description": "Find files by name using a database",
-            "c_program": {
-                "source_paths": ["locate/locate.c"]
-            },
-            "rust_program": {
-                "source_paths": ["src/uu/locate/src/locate.rs"]
+                "source_paths": ["src/xargs"]
             }
         }
     ]

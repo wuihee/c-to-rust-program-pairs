@@ -44,18 +44,25 @@ use crate::{
 use std::path::Path;
 
 fn main() {
-    let system_tools_file = Path::new(INDIVIDUAL_METADATA_DIRECTORY).join("system-tools.json");
-    let diffutils_file = Path::new(PROJECT_METADATA_DIRECTORY).join("diffutils.json");
+    let project_metadata_directory = Path::new(PROJECT_METADATA_DIRECTORY);
+    let individual_metadata_directory = Path::new(INDIVIDUAL_METADATA_DIRECTORY);
 
-    // Testing the clone functionality
-    println!("Downloading system-tools...");
-    match individual::parse(&system_tools_file) {
-        Ok(metadata) => corpus::download_metadata(&metadata),
-        Err(error) => println!("Failed to parse: {error}"),
-    };
-    println!("Downloading diffutils...");
-    match project::parse(&diffutils_file) {
-        Ok(metadata) => corpus::download_metadata(&metadata),
-        Err(error) => println!("Failed to parse: {error}"),
-    };
+    for metadata_file in project_metadata_directory
+        .read_dir()
+        .expect("Failed to read project metadata directory")
+    {
+        if let Ok(metadata_file) = metadata_file {
+            match project::parse(&metadata_file.path()) {
+                Ok(metadata) => {
+                    println!("Successfully parsed {:?}", metadata_file.path().file_name());
+                    corpus::download_metadata(&metadata);
+                }
+                Err(error) => println!(
+                    "Failed to parse {:?}: {}",
+                    metadata_file.path().file_name(),
+                    error
+                ),
+            }
+        }
+    }
 }

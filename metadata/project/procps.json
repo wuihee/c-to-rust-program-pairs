@@ -35,13 +35,13 @@
         {
             "program_name": "pidwait",
             "program_description": "Wait for a specific process to terminate.",
-            "c_program": { "source_paths": ["src/pidwait.c"] },
+            "c_program": { "source_paths": ["src/pgrep.c"] },
             "rust_program": { "source_paths": ["src/uu/pidwait/src"] }
         },
         {
             "program_name": "pkill",
             "program_description": "Kill processes based on name and other attributes.",
-            "c_program": { "source_paths": ["src/pkill.c"] },
+            "c_program": { "source_paths": ["src/pgrep.c"] },
             "rust_program": { "source_paths": ["src/uu/pkill/src"] }
         },
         {
@@ -71,7 +71,7 @@
         {
             "program_name": "snice",
             "program_description": "Change the scheduling priority of a running process.",
-            "c_program": { "source_paths": ["src/snice.c"] },
+            "c_program": { "source_paths": ["src/skill.c"] },
             "rust_program": { "source_paths": ["src/uu/snice/src"] }
         },
         {
