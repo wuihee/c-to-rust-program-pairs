@@ -1,2 +1,5 @@
-/target
+target
+programs
+repository_cache
+
 .DS_Store

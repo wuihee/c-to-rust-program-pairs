@@ -24,11 +24,7 @@
         },
         "translation_method": {
             "type": "string",
-            "enum": [
-                "manual",
-                "semi-automatic",
-                "automatic"
-            ],
+            "enum": ["manual", "semi-automatic", "automatic"],
             "description": "Translation process type. Manual: hand-written from scratch. Semi-automatic: mix of automated tools and manual work. Automatic: primarily tool-generated"
         },
         "translation_tool": {
@@ -37,12 +33,7 @@
         },
         "feature_relationship": {
             "type": "string",
-            "enum": [
-                "superset",
-                "subset",
-                "equivalent",
-                "overlapping"
-            ],
+            "enum": ["superset", "subset", "equivalent", "overlapping"],
             "description": "Feature relationship between C and Rust implementations"
         },
         "source_paths": {
@@ -60,9 +51,7 @@
                     "$ref": "#/definitions/source_paths"
                 }
             },
-            "required": [
-                "source_paths"
-            ]
+            "required": ["source_paths"]
         },
         "project_global_program": {
             "type": "object",
@@ -75,10 +64,7 @@
                     "$ref": "#/definitions/repository_url"
                 }
             },
-            "required": [
-                "documentation_url",
-                "repository_url"
-            ]
+            "required": ["documentation_url", "repository_url"]
         },
         "individual_program": {
             "allOf": [
@@ -163,9 +149,7 @@
                     }
                 }
             },
-            "required": [
-                "pairs"
-            ]
+            "required": ["pairs"]
         },
         {
             "title": "Project Pairs Metadata",
@@ -210,10 +194,7 @@
                     }
                 }
             },
-            "required": [
-                "project_information",
-                "pairs"
-            ]
+            "required": ["project_information", "pairs"]
         }
     ]
 }

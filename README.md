@@ -103,7 +103,7 @@ Our schema consists of many fields which specify individual properties or attrib
 **Translation Method Values:**
 
 - `manual` - Hand-written from scratch
-- `semi-automatic` - Mix of automated tools and manual work  
+- `semi-automatic` - Mix of automated tools and manual work
 - `automatic` - Primarily tool-generated
 
 **Feature Relationship Values:**
@@ -117,7 +117,9 @@ Our schema consists of many fields which specify individual properties or attrib
 
 Each C or Rust program have different configuration options, specified under the `c_program` or `rust_program` fields. Note that *project metadata* files have two program configurations. The first is the *global program configuration*, specified as the `project_global_program` field in our schema, which specifies fields that apply to every program pair in the project. This includes fields like `repository_url`, `documentation_url`, `build_commands`, `test_commands`, and `dependencies`. The next *program configuration* is listed as `project_program` in our schema and only applies to individual program pairs, containing the `source_paths` and `executable_paths` fields which are unique to each program.
 
-## CLI Specification
+## Corpus Tool
+
+### Specification
 
 1. Create a folder with the name of the program-pair.
 2. Clone the C repository into a temporary directory, but check if this has already been done.
